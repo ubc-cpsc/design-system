@@ -93,11 +93,13 @@
         <label class="pattern-label" for="{{ pattern_id }}-tab-2">Source</label>
         <div class="pattern-panel pattern-source">
           <textarea rows="6" cols="30">
-            {%- filter escape -%}
-            {% include 'patterns/' ~ pattern %}
-            {%- endfilter -%}
+            {% set pattern_output %}
+                {% include('patterns/' ~ pattern) %}
+            {% endset %}
+            {{ pattern_output|e }}
+
           </textarea>
-          <p><a href="/ia/templates/patterns/{{ pattern }}">{{ pattern }}</a></p>
+          <p><a href="/templates/patterns/{{ pattern }}">{{ pattern }}</a></p>
         </div>
 
       </div>

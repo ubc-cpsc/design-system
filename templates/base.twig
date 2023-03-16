@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ title }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+      <link rel="stylesheet" media="all" href="/themes/custom/ubccs/css/stable/hidden.module.css" />
+
+    <link rel="stylesheet" media="all" href="/themes/custom/ubccs/css/normalize.css" />
+    <link rel="stylesheet" media="all" href="https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-bw.css" />
+    <link rel="stylesheet" media="all" href="/themes/custom/ubccs/css/bootstrap.css" />
+{#    <link rel="stylesheet" media="all" href="/themes/contrib/galactus/css/clf.drupal.css" />#}
+    <link rel="stylesheet" media="all" href="/themes/custom/ubccs/css/local.clf.fixes.css" />
+    <link rel="stylesheet" media="all" href="/themes/custom/ubccs/css/main.css" />
+    <link rel="stylesheet" media="all" href="/themes/custom/ubccs/css/layout.css" />
+{#    <link rel="stylesheet" media="all" href="/themes/contrib/galactus/css/clf.social-icons.css" />#}
+    {#<link rel="stylesheet" media="all" href="/themes/contrib/galactus/css/navigation.sticky.css" />#}
+
+    {# @todo Integrate prototype with theme's components. #}
+    <link rel="stylesheet" media="all" href="/prototype/css/prototype.css" />
+
+  </head>
+  <body>
+
+    {% include 'includes/header.twig' %}
+
+    <div class="full-width-container non-clf">
+      <div class="container">
+        <main role="main">
+          {% block body %}
+            {{ content }}
+          {% endblock %}
+        </main>
+      </div>
+    </div>
+
+    {% include 'includes/footer.twig' %}
+  </body>
+</html>

@@ -11,14 +11,14 @@
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
-$autoloader = require __DIR__ . '/../../../vendor/autoload.php';
+$autoloader = require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
 // Setup Twig.
 $twig_options = [
-  'cache' => dirname(__DIR__, 3) . '/private/cache',
-  'auto_reload' => TRUE,
+    'cache' => dirname(__DIR__, 2) . '/private/cache',
+    'auto_reload' => TRUE,
 ];
-$loader = new FilesystemLoader(dirname(__DIR__) . '/templates');
+$loader = new FilesystemLoader(dirname(__DIR__, 2) . '/templates');
 $twig = new Environment($loader, $twig_options);
 
 print $twig->render('styleguide.twig', ['title' => 'IA Style Guide - UBC CS']);

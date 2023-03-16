@@ -10,17 +10,16 @@
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
-use Twig\Template;
 
-$autoloader = require __DIR__ . '/../../../vendor/autoload.php';
+$autoloader = require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
 // Setup Twig.
 $twig_options = [
-  'cache' => dirname(__DIR__, 3) . '/private/cache',
-  'auto_reload' => TRUE,
+    'cache' => dirname(__DIR__, 2) . '/private/cache',
+    'auto_reload' => TRUE,
 ];
 
-$templates_directory = dirname(__DIR__) . '/templates';
+$templates_directory = dirname(__DIR__, 2) . '/templates';
 $loader = new FilesystemLoader($templates_directory);
 $twig = new Environment($loader, $twig_options);
 

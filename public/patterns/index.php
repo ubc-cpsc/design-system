@@ -8,21 +8,21 @@
  * See COPYRIGHT.txt and LICENSE.txt files in the "core" directory.
  */
 
-$autoloader = require __DIR__ . '/../../../vendor/autoload.php';
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
+
+$autoloader = require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
 // Setup Twig.
 $twig_options = array(
-  'cache' => dirname(dirname(dirname(__DIR__))) . '/private/cache',
-  'autoescape' => TRUE,
-  'strict_variables' => FALSE,
-  'debug' => FALSE,
-  'auto_reload' => TRUE,
+    'cache' => dirname(__DIR__, 2) . '/private/cache',
+    'auto_reload' => TRUE,
 );
-$loader = new Twig_Loader_Filesystem(dirname(__DIR__) . '/templates');
-$twig = new Twig_Environment($loader, $twig_options);
+$loader = new FilesystemLoader(dirname(__DIR__, 2) . '/templates');
+$twig = new Environment($loader, $twig_options);
 
 $patterns = [];
-$iterator = new DirectoryIterator('../templates/patterns');
+$iterator = new DirectoryIterator('../../templates/patterns');
 
 foreach ($iterator as $fileInfo) {
   if ($fileInfo->isDot()) {
