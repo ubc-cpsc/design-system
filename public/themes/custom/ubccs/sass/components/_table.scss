@@ -1,0 +1,29 @@
+
+.node {
+  table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid $ubc-silver;
+    border-right-width: 0;
+    border-bottom-width: 0;
+  }
+
+  td,
+  th {
+    border: 0 solid $ubc-silver;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    padding: .5rem .8rem;
+    text-align: left;
+  }
+  thead th {
+    vertical-align: bottom;
+  }
+}
+
+// Override tablesort.
+td.is-active {
+  background-color: transparent;
+}

@@ -1,0 +1,82 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    view_mode != 'full' and node.isPromoted() ? 'node--promoted',
+    view_mode != 'full' and node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  {% block header %}
+    {% if not is_front %}
+    <header>
+      {% if content.field_header_image %}
+        {{ content.field_header_image }}
+      {% endif %}
+
+      {{ title_prefix }}
+      {% if page %}
+        <h1{{ title_attributes.addClass('page-title') }}>
+          {{ label }}
+        </h1>
+      {% else %}
+        <h2{{ title_attributes }}>
+          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        </h2>
+      {% endif %}
+      {{ title_suffix }}
+    </header>
+    {% endif %}
+  {% endblock %}
+
+  {% block node_meta %}
+  {% if display_submitted and page %}
+    <footer class="node__meta">
+      {# {{ author_picture }} #}
+      <div{{ author_attributes.addClass('node__submitted') }}>
+        {{ node.getCreatedTime()|format_date('custom', 'F j, Y') }}
+        {% trans %}by {{ author_name }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+  <div class="share-buttons" data-source="www.cs.ubc.ca">
+    <p><strong>Share to:</strong>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('<current>') | render | url_encode }}&quote={{ node.label | url_encode }}" target="_blank" title="Share on Facebook"><i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span></a>
+    <a href="https://twitter.com/intent/tweet?source={{ url('<current>') | render | url_encode }}&text={{ node.label | url_encode }}:%20{{ url('<current>') | render | url_encode }}" target="_blank" title="Tweet"><i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i><span class="sr-only">Tweet</span></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ url('<current>') | render | url_encode }}&title={{ node.label | url_encode }}&summary=&source={{ url('<current>') | render | url_encode }}" target="_blank" title="Share on LinkedIn"><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i><span class="sr-only">Share on LinkedIn</span></a>
+    </p>
+  </div>
+  {% endblock %}
+
+  {% block pre_content_custom_views %}{% endblock %}
+
+  {% block node_content %}
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ content|without('links', 'field_header_image', 'schedule') }}
+    {{ content.schedule }}
+    <div class="node__ical">
+      <a href="/node/{{ node.id }}/calendar/ical" alt="Add to calendar" title="Add to Outlook or iCal Calendars"><i class="fas fa-calendar-alt">&nbsp;</i></a>
+    </div>
+  </div>
+  {% endblock %}
+
+  {% block post_content_custom_views %}{% endblock %}
+
+  {% block node_links %}
+  {% if content.links %}
+    <div class="node__links">
+      {{ content.links }}
+    </div>
+  {% endif %}
+  {% endblock %}
+
+</article>

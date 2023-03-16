@@ -1,0 +1,28 @@
+.tl-timeline {
+  z-index: 1;
+}
+
+.tl-timegroup:nth-child(1) {
+  background-color: #e9e9fc !important;
+}
+
+.tl-timegroup:nth-child(2) {
+  background-color: #eee !important;
+}
+
+.tl-timegroup:nth-child(3) {
+  background-color: #fef !important;
+}
+
+.tl-timegroup:nth-child(4) {
+  background-color: #eee;
+}
+
+.tl-slide .tl-slide-content-container .tl-slide-content {
+  box-sizing: initial;
+}
+
+.tl-text h2.tl-headline-title,
+.tl-text h2.tl-headline {
+  color: #005554;
+}

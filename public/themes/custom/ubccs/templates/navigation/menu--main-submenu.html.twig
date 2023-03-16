@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a menu.
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+
+  1. We use menu_name (see above) to create a CSS class name from it.
+  See https://www.drupal.org/node/2649076
+#}
+{{ menus.menu_links(items, attributes, 0, menu_name) }} {# 1. #}
+{% set menu_name_class = menu_name|clean_class %}
+
+{% macro menu_links(items, attributes, menu_level, menu_name_class) %} {# 1. #}
+  {% import _self as menus %}
+
+  {% if items %}
+    <ul{{ attributes.removeClass('clearfix') }}>
+    {% for item in items %}
+      {%
+      set item_classes = [
+        item.is_expanded ? 'menu-item--expanded',
+        item.is_collapsed ? 'menu-item--collapsed',
+        item.in_active_trail ? 'menu-item--active-trail',
+        item.is_expanded and item.in_active_trail ? 'menu-item--expand',
+      ]
+      %}
+      <li{{ item.attributes.addClass('menu-item__item', item_classes) }}>
+        <div class="menu-item__label">{{ link(
+          item.title,
+          item.url,
+          item.attributes.removeClass(item_classes).addClass('menu-item__link')
+        ) }}
+          {% if item.below %}
+            <a class="menu-item__toggle"><i class="chevron right"></i></a>
+          {% endif %}
+        </div>
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1, menu_name_class) }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endmacro %}

@@ -1,0 +1,113 @@
+
+.block-sponsor-logos {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+
+  &--gold,
+  &--silver,
+  &--bronze {
+    padding: 2rem 0;
+  }
+
+  .field__item {
+    padding: 1rem;
+  }
+
+  img {
+    object-fit: contain;
+  }
+
+  &--gold,
+  &--silver,
+  &--none {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &--gold img,
+  &--silver img,
+  &--none img {
+      width: 150px;
+      max-height: 80px;
+  }
+
+  &--gold {
+    border: 3px solid gold;
+  }
+
+  &--silver {
+    border: 3px solid silver;
+
+    img {
+      width: 120px;
+    }
+  }
+
+  &--bronze {
+    border: 3px solid lighten(#ad8a56, 10%);
+
+    column-gap: 20px;
+    column-count: auto;
+    column-width: 150px;
+
+    h3:first-child,
+    h4:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      display: inline-block;
+      margin: 1rem 0;
+    }
+  }
+}
+
+.block-sponsor-logos > div.field--name-field-logos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#block-60853 {
+  display: flex;
+  justify-content: center;
+}
+
+.tag {
+  color: white;
+  font-size: 0.75em;
+
+  background-clip: padding-box;
+
+  border: 2px solid #fff;
+  border-radius: 0.5em;
+
+  margin-left: 0.5em;
+  text-transform: uppercase;
+
+  padding: 0 0.25em;
+}
+
+.tag--undergrad {
+  background-color: crimson;
+  border-color: rgba(crimson, 0.5);
+}
+
+.tag--grad {
+  background-color: lightskyblue;
+  border-color: rgba(lightskyblue, 0.5);
+}
+
+.tag--alumni {
+  background-color: green;
+  border-color: rgba(green, 0.5);
+}
+
+.tag--research {
+  background-color: orange;
+  border-color: rgba(orange, 0.5);
+}

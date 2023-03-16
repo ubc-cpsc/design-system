@@ -1,0 +1,13 @@
+landing_banner:
+  label: 'Landing Banner'
+  category: 'UBC CS'
+  template: templates/component/landing-banner
+  default_region: image
+  icon_map:
+    - [image]
+    - [title]
+  regions:
+    image:
+      label: Image
+    title:
+      label: Title

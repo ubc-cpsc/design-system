@@ -1,0 +1,17 @@
+@import '../variables';
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: $font-size-base;
+
+  // Override CLF.
+  margin-left: 0;
+
+  padding-left: $font-size-base * 2;
+}
+
+li {
+  // Override CLF to match default line-height.
+  line-height: 1.5;
+}

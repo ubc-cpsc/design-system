@@ -1,0 +1,13 @@
+.cart td {
+  vertical-align: middle;
+}
+
+.cart-form td {
+
+  // Too much space taken up in side a table when usually only one form element
+  // is visible.
+  .form-item,
+  .form-actions {
+    margin: 0;
+  }
+}

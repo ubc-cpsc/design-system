@@ -1,0 +1,69 @@
+// MEDIA QUERIES AND GRIDS
+// -------------------------
+
+$screen-md: 980px;
+
+// Grid.
+// -------------------------
+$grid-columns:      12;
+$grid-gutter-width: 30px;
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 980px,
+  // Extra large screen / wide desktop
+  xl: 1200px,
+  // Extra Extra large screen / wide desktop
+  xxl: 1500px
+);
+
+// Only max width to contain the site, otherwise full 1200px.
+$container-max-widths: (
+  xl: 1200px
+);
+
+// Fonts.
+// -------------------------
+$font-family-serif: Merriweather, Georgia, serif;
+$font-family-sans-serif: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+
+$font-family: $font-family-sans-serif;
+
+$font-size-base: 1.7rem !default;
+
+// UBC Colours.
+// -------------------------
+$ubc-blue: #002145;
+$ubc-grey: #2f5d7c;
+$ubc-light-grey: #5e869f;
+$ubc-lighter-grey: #98b2c3;
+$ubc-silver-grey: #c3d0d8;
+$ubc-silver: #d7e0e7;
+$silver: #cfcfd0;
+
+// Greys.
+// -------------------------
+$black: #000;
+$gray-darker: #222;
+$gray-dark: #444;
+$gray: #555;
+$gray-light: #999;
+$gray-lighter: #eee;
+$white: #fff;
+
+// CS Colours.
+// -------------------------
+$burnt-sienna: #9e4225;
+$orange: #ef8843;
+$dark-teal: #005554;
+$teal: #00afa4;
+
+$unit-color: $burnt-sienna; // Burnt Sienna.
+

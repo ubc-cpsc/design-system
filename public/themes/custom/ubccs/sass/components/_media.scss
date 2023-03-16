@@ -1,0 +1,19 @@
+.media--type-logo {
+  display: inline-block;
+  vertical-align: middle;
+
+  // Remove inline space below image.
+  div {
+    line-height: 0;
+  }
+
+  padding-left: 2rem;
+
+  img {
+    object-fit: contain;
+  }
+}
+
+.media--type-logo:first-of-type {
+  padding-left: 0;
+}

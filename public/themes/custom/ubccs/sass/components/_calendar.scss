@@ -1,0 +1,15 @@
+.view-event-calendar .view-content {
+  clear:both;
+}
+.view-event-calendar .pager ul.js-pager__items {
+  padding-left: 0;
+}
+.view-event-calendar .pager ul.js-pager__items li.pager__item--previous {
+  float: left;
+}
+.view-event-calendar .pager ul.js-pager__items li.pager__item--next {
+  float: right;
+}
+.view-event-calendar .calendar-granularity a{
+  padding: 0 10px;
+}

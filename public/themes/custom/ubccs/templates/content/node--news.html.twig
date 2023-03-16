@@ -1,0 +1,23 @@
+{% extends "node.html.twig" %}
+{% block node_meta %}
+  {% if display_submitted and page %}
+  {% set text = content.body|render|striptags %}
+  {% set read_time = (text|split(' ')|length / 250)|round(0,'ceil') %}
+  <footer class="node__meta">
+    {# {{ author_picture }} #}
+    <div{{ author_attributes.addClass('node__submitted') }}>
+      {{ node.getCreatedTime()|format_date('month_day_year') }}
+      {% trans %}by {{ author_name }}{% endtrans %}
+      | {{ read_time }} min{% if read_time > 1 %}s{% endif %} read
+      {{ metadata }}
+    </div>
+  </footer>
+  <div class="share-buttons" data-source="www.cs.ubc.ca">
+    <p><strong>Share to:</strong>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ url('<current>') | render | url_encode }}&quote={{ node.label | url_encode }}" target="_blank" title="Share on Facebook"><i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i><span class="sr-only">Share on Facebook</span></a>
+    <a href="https://twitter.com/intent/tweet?source={{ url('<current>') | render | url_encode }}&text={{ node.label | url_encode }}:%20{{ url('<current>') | render | url_encode }}" target="_blank" title="Tweet"><i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i><span class="sr-only">Tweet</span></a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ url('<current>') | render | url_encode }}&title={{ node.label | url_encode }}&summary=&source={{ url('<current>') | render | url_encode }}" target="_blank" title="Share on LinkedIn"><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i><span class="sr-only">Share on LinkedIn</span></a>
+    </p>
+  </div>
+{% endif %}
+{% endblock %}

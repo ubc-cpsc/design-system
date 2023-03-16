@@ -1,0 +1,14 @@
+
+// Maintain a reasonable column width.
+.views-table .views-field-field-award-date {
+  width: 35px;
+}
+
+.views-table .views-field-field-award-recipient,
+.views-table .views-field-field-award-organization {
+  width: 25%;
+}
+
+.view-awards .views-table {
+  width: 100%;
+}

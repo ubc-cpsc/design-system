@@ -1,0 +1,267 @@
+@import "../variables";
+
+// Buttons.
+// Not touching bootstrap .btn class buttons.
+
+// Classy override.
+.button,
+.image-button {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+%button {
+  display: inline-block;
+  padding: .7rem 1.7rem;
+
+  border: 0;
+  border-radius: .2rem;
+
+  // Override CLF.
+  background: none;
+  text-decoration: none;
+
+  transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  // Default offset.
+  outline-offset: 2px;
+
+  &.button--hover,
+  &.button--focus,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+
+  &.button--focus,
+  &:focus {
+    // Prevent focus ring being covered by next siblings.
+    z-index: 10;
+    outline: 1px dotted $teal;
+  }
+
+  &.button--active,
+  &:active {
+    transition: none;
+  }
+}
+
+.button {
+  @extend %button;
+}
+
+.field-add-more-submit.button {
+  font-size: .8em;
+}
+
+.button.form-submit,
+%button--primary {
+  border-color: $teal;
+  background-color: $teal;
+  color: #fff;
+
+  &.button--hover,
+  &:hover {
+    background-color: darken($teal, 10%);
+    color: #fff;
+    box-shadow: 0 1px 2px hsla(203, 10%, 10%, 0.25);
+  }
+
+  &.button--active,
+  &:active {
+    background-color: $dark-teal;
+    box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.2);
+  }
+}
+.button--primary {
+  @extend %button--primary;
+}
+
+%button--secondary {
+  border-color: $dark-teal;
+  background-color: $dark-teal;
+  color: #fff;
+  //text-shadow: 0 1px hsla(0, 0%, 0%, 0.5);
+
+  &.button--focus,
+  &.button--hover,
+  &:hover,
+  &:focus {
+    background-color: $dark-teal;
+    border-color: $dark-teal;
+    color: #fff;
+  }
+
+  &.button--hover,
+  &:hover {
+    background-color: darken($teal, 10%);
+    box-shadow: 0 1px 2px hsla(203, 10%, 10%, 0.25);
+  }
+
+  &.button--active,
+  &:active {
+    background-color: darken($dark-teal, 5%);
+    box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.2);
+  }
+}
+
+.button--secondary {
+  @extend %button--secondary;
+}
+
+/**
+ * Overrides styling from system.theme.
+ */
+.button-action::before {
+  margin-left: -0.2em;
+  padding-right: 0.2em;
+  font-size: 0.875rem;
+  line-height: 16px;
+}
+[dir="rtl"] .button-action::before {
+  margin-right: -0.2em;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0.2em;
+}
+
+/* Link actions. */
+
+/**
+ * Style a clickable/tappable element as a link. Duplicates the base style for
+ * the <a> tag, plus a reset for padding, borders and background.
+ */
+.link {
+  display: inline;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-decoration: none;
+
+  color: $teal;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+    color: $dark-teal;
+  }
+}
+
+/**
+ * We've temporarily added the danger button here, bit of a harsh reset but we
+ * need it.
+ * @todo replace with link--danger.
+ * See https://www.drupal.org/node/2123731
+ */
+.button--danger {
+  display: inline;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: none;
+  color: #c72100;
+  text-decoration: underline;
+
+  &.button--focus,
+  &.button--hover,
+  &.button--active,
+  &:hover,
+  &:focus,
+  &:active {
+    color: #ff2a00;
+    text-decoration: underline;
+    text-shadow: none;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background: none;
+  }
+
+  &:disabled,
+  &.is-disabled {
+    color: #737373;
+    cursor: default;
+    text-decoration: none;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background: none;
+  }
+}
+
+%button--outline,
+.button--outline {
+  color: $teal;
+  box-shadow: inset 0 0 0 2px $teal;
+
+  &.button--hover,
+  &:hover {
+    box-shadow: inset 0 0 0 2px darken($teal, 10%);
+    color: darken($teal, 10%);
+  }
+
+  &.button--active,
+  &:active {
+    background-color: rgba(255, 255, 255, .3);
+    color: $dark-teal;
+    box-shadow: inset 0 0 0 2px $dark-teal;
+  }
+
+}
+
+.button--inverse {
+  color: #fff;
+  box-shadow: inset 0 0 0 2px #fff;
+
+  &.button--hover,
+  &.button--active,
+  &:hover,
+  &:active {
+    background-color: rgba(255, 255, 255, .2);
+    color: #fff;
+  }
+
+  &.button--active,
+  &:active {
+    background-color: rgba(255, 255, 255, .3);
+  }
+}
+
+%button--large,
+.button--large {
+  border-radius: .3rem;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+}
+
+%button--small,
+.button--small {
+  font-size: 1.5rem;
+  padding: .5rem 1.5rem;
+}
+
+// Last to override.
+.button:disabled,
+.button:disabled:active,
+.button.is-disabled,
+.button.is-disabled:active {
+  background-color: #ededed;
+  box-shadow: none;
+  color: #5c5c5c;
+  cursor: default;
+  text-shadow: 0 1px hsla(0, 0%, 100%, 0.6);
+}
+
+// Read more buttons.
+.read-more {
+  margin-top: 2rem;
+}
+
+.read-more__link {
+  @extend %button;
+  @extend %button--outline;
+  @extend %button--small;
+}

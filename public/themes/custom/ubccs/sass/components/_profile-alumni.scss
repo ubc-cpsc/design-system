@@ -1,0 +1,46 @@
+@import '../variables';
+
+.profile-alumni {
+  display: flex;
+  flex-wrap: wrap;
+
+  position: relative;
+
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.profile-alumni__content {
+  flex-grow: 4;
+  flex-shrink: 1;
+  flex-basis: 50%;
+}
+
+.profile-alumni__image {
+  margin-right: 20px;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+
+  .image-default,
+  img {
+    max-width: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .image-default {
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    background-color: $ubc-grey;
+    color: $white;
+    font-size: 5rem;
+  }
+}
+
+.profile-alumni__name {
+  font-size: 3rem;
+}

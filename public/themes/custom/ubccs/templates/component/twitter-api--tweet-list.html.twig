@@ -1,0 +1,20 @@
+{# <h3>
+  <a href="https://twitter.com/{{ twitter_user.screen_name }}"><img src="{{ twitter_user.profile_img }}" alt="" class="twitter-avator" rel="nofollow noopener" /></a> Tweets by <a href="https://twitter.com/{{ twitter_user.screen_name }}" rel="nofollow noopener">@{{ twitter_user.screen_name }}</a>
+</h3> #}
+<div class="tweets">
+  {{ tweets }}
+</div>
+<footer>
+  <a class="button button--primary view-twitter" href="https://twitter.com/{{ twitter_user.screen_name }}" rel="nofollow noopener">View on Twitter</a>
+</footer>
+
+<script>
+  const twitter_cards = document.querySelectorAll('div.tweet__wrap');
+
+  twitter_cards.forEach(el => {
+    el.addEventListener('click', (e) => {
+      if (e.target.matches('a')) return;
+      window.location = el.dataset.url;
+    });
+  });
+</script>

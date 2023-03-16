@@ -1,0 +1,10 @@
+@import '../variables';
+
+// UNIT COLOURS
+#ubc7-unit {
+  background-color: $unit-color;
+}
+// override clf
+body {
+  padding: 0;
+}

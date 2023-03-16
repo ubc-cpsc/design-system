@@ -1,0 +1,100 @@
+<?php
+
+/**
+ * @file
+ * UBC CS Theme functions.
+ */
+
+/**
+ * Implements THEME_preprocess_HOOK()
+ *
+ * Attaches the schedule and other blocks to event 'full' display mode.
+ */
+function ubccs_preprocess_node__event__full(&$variables) {
+
+  // Find schedule related to this node.
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+  $schedule = $storage->loadByProperties(['field_event' => $variables['node']->ID()]);
+
+  if (!empty($schedule)) {
+    $schedule = reset($schedule);
+
+    /** @var \Drupal\Core\Entity\EntityViewBuilderInterface $render_controller */
+    $render_controller = \Drupal::entityTypeManager()->getViewBuilder('node');
+    // Inject the rendered content directly into variable twig can handle.
+    $variables['content']['schedule'] = $render_controller->view($schedule, 'teaser');
+  }
+
+}
+
+/**
+ * Adjust styling of fields.
+ */
+function ubccs_preprocess_field(&$variables) {
+  // Customize only on profile pages.
+  if ($variables['entity_type'] != 'profile') {
+    return;
+  }
+
+  $element = $variables['element'];
+  if (isset($element['#field_name'])) {
+    // Change labels to H2.
+    $fields_label_transform = [
+      'field_person_cv',
+      'field_computing_keywords',
+      'field_person_interests',
+      'field_selected_publications',
+      'field_research_interests',
+      'field_research_groups',
+    ];
+    if (in_array($element['#field_name'], $fields_label_transform)) {
+      $variables['label'] = ['#markup' => '<h2>' . $variables['label'] . '</h2>'];
+    }
+
+    if ($element['#field_name'] == 'field_person_job_title') {
+      $variables['items'][0]['content']['#prefix'] = '<h3>';
+      $variables['items'][0]['content']['#suffix'] = '</h3>';
+    }
+
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function ubccs_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  $new_suggestions = [];
+
+  // Order the view_mode more specific than the bundle.
+  $node = $variables['elements']['#node'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  $new_suggestions[] = 'node__' . $node->bundle();
+  $new_suggestions[] = 'node__' . $sanitized_view_mode;
+  $new_suggestions[] = 'node__' . $node->bundle() . '__' . $sanitized_view_mode;
+  $new_suggestions[] = 'node__' . $node->id() . '__' . $sanitized_view_mode;
+  $new_suggestions[] = 'node__' . $node->id();
+
+  $suggestions = array_diff($suggestions, $new_suggestions);
+  $suggestions = array_merge($new_suggestions, $suggestions);
+}
+
+/**
+ *
+ */
+function ubccs_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}
+
+/**
+ *
+ */
+function ubccs_preprocess_html(&$variables) {
+  $current_uri = \Drupal::request()->getRequestUri();
+  if (strpos($current_uri, 'reading-room/') !== FALSE) {
+    // Children pages of the reading room page.
+    $variables['head_title'] = 'ICICS/Computer Science Reading Room: ' . $variables['head_title']['title'];
+  }
+}

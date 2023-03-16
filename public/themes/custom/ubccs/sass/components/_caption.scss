@@ -1,0 +1,41 @@
+
+// Caption filter: default styling for displaying image captions.
+// Essentials, based on https://stackoverflow.com/a/13363408.
+.caption {
+  display: table;
+}
+.caption > * {
+  display: block;
+  max-width: 100%;
+}
+.caption > figcaption {
+  display: table-caption;
+  max-width: none;
+  caption-side: bottom;
+}
+
+// Media captions.
+.media + figcaption {
+  background: $burnt-sienna;
+  color: #fff;
+}
+
+.caption .media .field {
+  // Remove gap under inline elements like iframe or img.
+  line-height: 1;
+}
+
+/* Override clf's default blockquote and pre styles when captioned. */
+.caption-pre > pre,
+.caption-blockquote > blockquote {
+  margin: 0;
+}
+.caption-blockquote > figcaption::before {
+  content: "— ";
+}
+.caption-blockquote > figcaption {
+  text-align: left;
+}
+[dir="rtl"] .caption-blockquote > figcaption {
+  text-align: right;
+}

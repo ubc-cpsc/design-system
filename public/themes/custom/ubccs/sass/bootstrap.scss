@@ -1,0 +1,24 @@
+
+
+@import 'bootstrap-no-output';
+
+// Don't import all of bootstrap, only things you need when you need it.
+// @import '../node_modules/bootstrap/scss/bootstrap';
+
+// Don't use these, it's got too many opinions that are not shared and other CSS provides.
+//@import '../node_modules/bootstrap/scss/reboot';
+//@import '../node_modules/bootstrap/scss/type';
+//@import '../node_modules/bootstrap/scss/code';
+//@import '../node_modules/bootstrap/scss/utilities';
+//@import '../node_modules/bootstrap/scss/images';
+//@import '../node_modules/bootstrap/scss/root';
+
+
+// Bootstrap grid.
+@import '../node_modules/bootstrap/scss/grid';
+
+// Bootstrap cards.
+//@import '../node_modules/bootstrap/scss/card';
+
+// Bootstrap jumbotron.
+//@import '../node_modules/bootstrap/scss/jumbotron';

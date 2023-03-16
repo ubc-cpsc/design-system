@@ -1,0 +1,30 @@
+@import '../variables';
+
+.research-area__label {
+  display: flex;
+
+  @include media-breakpoint-down(xs) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.research-area__icon {
+  color: $burnt-sienna;
+  display: inline-block;
+  margin-right: .5rem;
+  width: 4rem;
+  flex-shrink: 0;
+}
+
+// Generated for $burnt-sienna https://codepen.io/sosuke/pen/Pjoqqp for SVGs.
+.research-area__icon img {
+  filter: invert(28%) sepia(48%) saturate(1393%) hue-rotate(338deg) brightness(96%) contrast(90%);
+  width: 3.5rem;
+}
+
+@include media-breakpoint-up(xs) {
+  .view-id-research > .view-grouping > .view-grouping-content {
+    padding: 0 4.5rem;
+  }
+}

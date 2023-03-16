@@ -1,0 +1,87 @@
+
+///* ---------- General Layout ---------- */
+
+body,
+input,
+textarea,
+select {
+  color: #000;
+  background: none;
+}
+
+// CLF override.
+a:link::after {
+  content: "";
+  padding-left: inherit;
+}
+
+//body.two-sidebars,
+//body.sidebar-first,
+//body.sidebar-second,
+//body {
+//  width: 640px;
+//}
+//#sidebar-first,
+//#sidebar-second,
+//.navigation,
+//#toolbar,
+//#footer-wrapper,
+
+// Hide navigation components.
+.sub-menu,
+#back-to-top,
+.contextual,
+nav.tabs {
+  display: none;
+}
+
+// Hide footers.
+footer {
+  display: none;
+}
+
+//.one-sidebar #content,
+//.two-sidebars #content {
+//  width: 100%;
+//}
+
+//* {
+//  background: transparent !important;
+//  color: #444 !important;
+//  text-shadow: none;
+//}
+//a,
+//a:visited {
+//  color: #444 !important;
+//  text-decoration: underline;
+//}
+//a:after {
+//  content: " (" attr(href) ")";
+//}
+//abbr:after {
+//  content: " (" attr(title) ")";
+//}
+//
+//pre, blockquote {
+//  border: 1px solid #999;
+//  page-break-inside: avoid;
+//}
+//.content table th,
+//.content table td {
+//  border-color: #333;
+//}
+
+img {
+  page-break-inside: avoid;
+}
+
+
+// Typography.
+p, h2, h3 {
+  orphans: 3;
+  widows: 3;
+}
+
+h2, h3, h4 {
+  page-break-after: avoid;
+}

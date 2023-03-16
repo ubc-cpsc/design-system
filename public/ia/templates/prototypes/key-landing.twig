@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+{% block body %}
+
+  <!-- METHOD #333 - Just a Hero Image with Title, Intro Text Below -->
+
+  <div class="landing-banner">
+
+    <div class="landing-banner__image extend–background">
+      <img src="../img/banner.jpg" alt="Graduate">
+    </div>
+
+    <div class="landing-banner__title">
+      <h1>Graduate Students</h1>
+    </div>
+  </div>
+
+  <div class="landing-intro">
+    <p>
+      The UBC Department of Computer Science, established in May 1968, is one of the top computer science departments in
+      North America. Recognized internationally for excellence in research and teaching with a conscious focus on
+      interdisciplinary programs, the Department encourages diversity both within its community and areas of study, and
+      plays a leadership role in research, teaching and outreach activities to champion the understanding and
+      integration of Computer Science within all aspects of society.
+    </p>
+  </div>
+
+  {% include 'prototypes/cards.twig' %}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "scripts": {
+    "build:sass": "sass sass:css",
+    "autoprefixer": "postcss --no-map -u autoprefixer --autoprefixer.browsers -r css/*.css",
+    "build:css": "npm run build:sass && npm run autoprefixer",
+    "watch:css": "onchange 'sass/**/*.scss' -- npm run build:css"
+  },
+  "dependencies": {
+    "@fancyapps/fancybox": "github:fancyapps/fancybox",
+    "bootstrap": "^4.0.0",
+    "normalize.css": "^8.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.0",
+    "onchange": "^7.0.0",
+    "postcss-cli": "^10.0.0",
+    "sass": "^1.0.0"
+  },
+  "copyFiles": [
+    {
+      "from": "node_modules/@fancyapps/fancybox/dist/*",
+      "to": "js/vendor/fancybox"
+    }
+  ],
+  "copyFilesSettings": {
+    "whenFileExists": "overwrite"
+  },
+  "browserslist": [
+    "> 1%"
+  ]
+}

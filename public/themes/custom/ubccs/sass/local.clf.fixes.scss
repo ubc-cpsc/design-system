@@ -1,0 +1,131 @@
+@import 'variables';
+@import 'bootstrap-no-output';
+
+/**
+ * $file
+ * To fix inconsistencies with the locally-hosted CLF CSS
+ */
+
+footer {
+  background-color: inherit;
+}
+
+#ubc7-unit-social-icons i {
+  color: #fff;
+  background-color: $unit-color;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 32px;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+}
+
+// Overrides to make nav consistent after sticky trigger
+#ubc7-unit-menu {
+  width: 100%;
+  margin: 0; //set margin to zero so width is not offset.
+}
+
+// Hide external link.
+#ubc7-unit-social-icons span.ext {
+  display: none;
+}
+
+// Use the same font everywhere.
+#ubc7-global-footer,
+#ubc7-global-menu,
+#ubc7-minimal-footer,
+#ubc7-unit,
+input,
+button {
+  font-family: $font-family;
+}
+
+#ubc7-search-box input {
+  font-size: inherit !important;
+}
+
+.btn,
+.btn:focus,
+.btn:hover,
+.btn:active {
+  box-shadow: none;
+  border: 0;
+  color: $teal;
+  background-color: transparent;
+
+  line-height: inherit;
+  font-size: inherit;
+}
+
+// Undo the forced width of 206px in the CLF.
+input,
+textarea,
+.uneditable-input {
+  width: inherit;
+}
+
+input[type="text"] {
+  height: auto;
+  line-height: inherit;
+}
+
+#ubc7-header {
+  box-sizing: content-box;
+}
+/* Remove the inset shadows and text shadows from the unit area */
+#ubc7-unit {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+#ubc7-unit-name a,
+#ubc7-unit-name a:hover {
+  text-shadow: none;
+}
+
+//
+ul.primary.tabs,
+ul.secondary.tabs {
+  width: 100%;
+  max-width: map_get($container-max-widths, xl);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#ubc7-unit-menu .container {
+  max-width: map_get($container-max-widths, xl);
+  width: 100%;
+}
+
+.non-clf .container {
+  max-width: map_get($container-max-widths, xxl);
+}
+
+// Cover sprites.
+@include media-breakpoint-between(lg, xl) {
+  #ubc7-wordmark {
+    width: 100% !important;
+    border-right: #fff solid 100px;
+  }
+}
+
+#ubc7-global-utility button {
+  position: absolute;
+  right: 0;
+}
+
+// Get the white up arrow.
+.ubc7-arrow.up-arrow.white {
+  background-position: -1207px -225px;
+}
+
+#ubc7-global-footer {
+  // Match CLF sizes by setting container.
+  font-size: 14px;
+}
+
+.unit-footer-column {
+  margin-bottom: 2rem;
+}

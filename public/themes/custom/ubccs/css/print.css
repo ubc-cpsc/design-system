@@ -1,0 +1,36 @@
+body,
+input,
+textarea,
+select {
+  color: #000;
+  background: none;
+}
+
+a:link::after {
+  content: "";
+  padding-left: inherit;
+}
+
+.sub-menu,
+#back-to-top,
+.contextual,
+nav.tabs {
+  display: none;
+}
+
+footer {
+  display: none;
+}
+
+img {
+  page-break-inside: avoid;
+}
+
+p, h2, h3 {
+  orphans: 3;
+  widows: 3;
+}
+
+h2, h3, h4 {
+  page-break-after: avoid;
+}

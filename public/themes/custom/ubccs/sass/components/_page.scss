@@ -1,0 +1,13 @@
+@import '../variables';
+
+// Add partial underline on all page titles.
+.page-title::after {
+  content: '';
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 250px;
+  height: 3px;
+  background-color: $burnt-sienna;
+}
+

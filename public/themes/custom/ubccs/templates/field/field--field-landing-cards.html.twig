@@ -1,0 +1,29 @@
+{% set classes = 'cards' %}
+{%
+  set title_classes = [
+  'field__label',
+  label_display == 'visually_hidden' ? 'visually-hidden',
+]
+%}
+{% if items %}
+  <div class="container landing-cards">
+    <div class="row">
+      {% if not label_hidden %}
+        <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+      {% endif %}
+
+      <div{{ attributes.addClass(classes, 'field__items') }}>
+        {% for item in items %}
+          {% set url = item.content.field_card_link['#object'].field_card_link.0.getUrl() %}
+          {% if item.content and url %}
+            <div{{ item.attributes.addClass('col-sm-6 col-md-4 card-wrapper','field__item') }}>
+              <a href="{{ url }}" class="card text-center">
+                {{ item.content|without('field_card_link') }}
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}

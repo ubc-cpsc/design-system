@@ -1,0 +1,42 @@
+@import '../variables';
+
+
+figure {
+  display: table;
+
+  margin: 2rem 0;
+
+  img {
+    // Prevent line-height spacing under image and between caption.
+    display: block;
+  }
+}
+
+figcaption {
+  display: table-caption;
+  caption-side: bottom;
+  max-width: none;
+
+  padding: 1rem 2rem;
+
+  font-size: $font-size-base * 0.8;
+  line-height: 1.2;
+}
+
+figcaption p {
+  margin: 0;
+}
+
+// Image captions.
+a + figcaption,
+img + figcaption {
+  color: $burnt-sienna;
+  // Temporary fix for AC 6542-106.
+  //background: $burnt-sienna;
+  //color: #fff;
+}
+
+// Blockquote captions.
+blockquote + figcaption {
+  color: $gray;
+}

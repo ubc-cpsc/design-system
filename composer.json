@@ -1,0 +1,25 @@
+{
+    "name": "ubc-cpsc/cs-ia",
+    "type": "project",
+    "require": {
+        "twig/twig": "^3.0",
+        "vlucas/phpdotenv": "^5.0"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "autoload": {
+        "files": [
+            "load.environment.php"
+        ]
+    },
+    "config": {
+        "discard-changes": true,
+        "platform": {
+            "php": "8.2"
+        },
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

@@ -1,0 +1,186 @@
+@import '../variables';
+
+// Embeded videos need spacing on home.
+.container-home .media {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.view-home-page-banners {
+  max-width: 100%;
+}
+
+.home__icons {
+  background-color: $gray-lighter;
+}
+.home__cards {
+  margin-top: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.home__card-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.home__card {
+  text-decoration: none;
+  color: inherit;
+  padding: 2rem;
+  //max-width: 320px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.home__card-header {
+  font-size: 4rem;
+  color: $unit-color;
+}
+
+.home__card-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: $dark-teal;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.home__card-text {
+  font-size: 1.4rem;
+}
+
+// Remove margin on top and bottom and only leave in between.
+.home__card-text p {
+  margin: 0;
+}
+.home__card-text p + p {
+  margin-top: 1.7rem;
+}
+
+// Space around the card buttons.
+.home__card-text .button {
+  margin: .2rem;
+}
+
+
+.home__widgets {
+  display: flex;
+  flex-wrap: wrap;
+
+  .home__widgets-block {
+    h2 {
+      line-height: 1;
+
+      &::after {
+        width: 100%;
+        height: 3px;
+        background-color: $unit-color;
+        margin: 0 auto;
+        content: '';
+        display: inline-block;
+      }
+    }
+
+    .views-element-container {
+      flex-grow: 1;
+
+      .views-row:last-child .views-field-nothing {
+        display: none;
+      }
+    }
+  }
+
+  .views-row {
+    margin-bottom: 1rem;
+  }
+}
+.tweets {
+  max-height: 650px;
+  overflow-y: scroll;
+}
+.tweet-header {
+  display: flex;
+  align-items: flex-start;
+}
+.tweet-header-info p {
+  font-weight:normal;
+  margin-top: 5px;
+}
+
+.twitter-avator {
+  border-radius: 100px;
+  width: 48px;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+.tweet__wrap {
+  margin: auto 0;
+  padding: 10px 20px;
+  border-bottom: 2px solid #e6e6e6;
+  cursor: pointer;
+  max-width: 100%;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #efefef;
+    text-decoration: none;
+    color: inherit;
+  }
+}
+.tweet__img-wrap {
+  padding-left: 60px;
+}
+
+.tweet__footer {
+  display: flex;
+}
+.tweet__footer svg {
+  color: #657786;
+  margin-right: 10px;
+}
+.tweet__footer svg:hover {
+  color: #ff1493;
+}
+.tweet__retweet {
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+.tweet__retweet svg {
+  margin-right: 10px;
+}
+.tweet__user {
+  display: flex;
+}
+.tweet__text {
+  margin: 10px auto;
+}
+.tweet__date {
+  color: $gray-light;
+}
+.view-twitter {
+  margin-top: 10px;
+}
+
+@media screen and (max-width:430px){
+
+  .tweet-header {
+    flex-direction:column;
+  }
+  .tweet-header img {
+    margin-bottom: 20px;
+  }
+  .tweet-header-info p {
+    margin-bottom: 30px;
+  }
+  .tweet__img-wrap {
+    padding-left: 0;
+  }
+}

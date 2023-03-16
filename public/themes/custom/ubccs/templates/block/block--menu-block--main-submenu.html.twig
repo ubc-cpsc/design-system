@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Theme override for a menu block.
+ */
+#}
+{%
+set classes = [
+  'sub-menu',
+  'sub-menu--' ~ derivative_plugin_id|clean_class,
+]
+%}
+{# Label. If not displayed, we still provide it for screen readers. #}
+{% if not configuration.label_display %}
+  {% set title_attributes = title_attributes.addClass('visually-hidden') %}
+{% endif %}
+
+{% set heading_id = attributes.id ~ '-menu'|clean_id %}
+<nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.addClass(classes)|without('role', 'aria-labelledby') }}>
+  {{ title_prefix }}
+  <h3{{ title_attributes.setAttribute('id', heading_id) }}>{{ configuration.label }}</h3>
+  {{ title_suffix }}
+
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</nav>

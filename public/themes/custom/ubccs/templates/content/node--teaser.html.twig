@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Theme override to display a node teaser.
+ */
+#}
+{% extends "node.html.twig" %}
+{% block header %}
+  <header>
+    {{ title_prefix }}
+    <h3{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h3>
+    {{ title_suffix }}
+  </header>
+{% endblock %}

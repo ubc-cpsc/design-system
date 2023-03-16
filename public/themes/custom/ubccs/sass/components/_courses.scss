@@ -1,0 +1,61 @@
+@import '../variables';
+@import '../bootstrap-no-output';
+
+.course-section-info {
+  border: 1px solid #cecece;
+  margin: 20px auto;
+}
+.course-section-info-header {
+  padding: 0 20px;
+}
+.course-section-info table {
+  width: 100%;
+  margin-bottom: 0;
+}
+.course-section-table-header {
+  background: #005554;
+  color: #fff;
+  text-transform: uppercase;
+}
+.course-section-table-header > tr > th {
+  font-weight: inherit;
+}
+.course-section-table-body > tr {
+  cursor: pointer;
+  white-space: nowrap;
+}
+.course-section-table-body > tr.open, .course-section-table-body > tr:hover {
+  background: #efefef;
+}
+.course-section-table-body > tr.child {
+  cursor: auto;
+  white-space: inherit;
+}
+.course-section-table-body > tr.child:hover {
+  background: none;
+}
+.course-section-info-details {
+  text-align: center;
+}
+.open .course-section-info-toggle {
+  background-color: #dfe3eb;
+
+}
+.course-ssc-link-wrapper, .course-section-ssc-link {
+  float: right;
+}
+
+/* Responsive */
+@include media-breakpoint-down(md) {
+.course-section-info .views-field-field-course-days,
+.course-section-info .views-field-field-course-end-time {
+    display: none;
+  }
+}
+@include media-breakpoint-down(sm) {
+.course-section-info .views-field-field-course-term,
+.course-section-info .views-field-field-course-room,
+.course-section-info .views-field-field-course-instructors {
+    display: none;
+  }
+}

@@ -1,0 +1,43 @@
+.jumbotron {
+  height: 455px;
+}
+
+.jumbotron .title {
+  position: relative;
+  bottom: 60px;
+  left: 0;
+  height: 53px;
+  width: 100%;
+  padding: 12px 0 0 10px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+@media (min-width: 768px) {
+  .jumbotron .title {
+    bottom: 0;
+    top: 220px;
+    height: 130px;
+    width: 625px;
+    padding: 20px 0 0 30px;
+  }
+}
+
+.jumbotron .title h1 {
+  font-size: 18px;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .jumbotron .title h1 {
+    font-size: 39px;
+  }
+}
+
+.jumbotron--full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}

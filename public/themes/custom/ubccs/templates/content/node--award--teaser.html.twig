@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Theme override to display a node teaser.
+ */
+#}
+{% extends "node.html.twig" %}
+{% block header %}
+  {{ title_prefix }}
+  <div class="views-field">
+    <div class="field-content">
+      <time datetime="{{ node.published_at.value|date('Y-m-d\\TH:i:s\\Z') }}" class="datetime">{{ content.field_award_date.value|date('F Y') }}</time>
+    </div>
+  </div>
+  <div class="views-field">
+    <div class="field-content">
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </div>
+  </div>
+  {{ title_suffix }}
+{% endblock %}
+{% block node_content %}{% endblock %}
+{% block node_links %}{% endblock %}

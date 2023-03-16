@@ -1,0 +1,60 @@
+{#
+/**
+ * @file
+ * Homepage template.
+ */
+#}
+{% extends "page.html.twig" %}
+
+{% block layout_content %}
+  <div class="layout-content{{ page.sidebar_first or page.sidebar_second ? ' has-sidebar' : ' layout-content-full-width' }}">
+    <div class="home__slider">
+      {{ drupal_view('home_page_banners', 'block_1') }}
+    </div>
+
+    {{ page.content.ubccs_content }}
+
+    <section class="home__icons">
+      <div class="home__cards container">
+        <div class="col-sm-6 col-md-4 home__card-wrapper">
+          {{ cs_homepage_card('60775') }}
+        </div>
+        <div class="col-sm-6 col-md-4 home__card-wrapper">
+          {{ cs_homepage_card('60776') }}
+        </div>
+        <div class="col-sm-6 col-md-4 home__card-wrapper">
+          {{ cs_homepage_card('60777') }}
+        </div>
+      </div>
+    </section>
+
+    <section class="home__widgets container">
+      <div class="row">
+{#
+        <div class="col-sm-6 col-md-4 home__widgets-block">
+            <h2>Events</h2>
+            {{ drupal_view('event_listings', 'block_3') }}
+            <a href="{{ path('entity.node.canonical', { 'node': 80006 }) }}" class="button button--primary text-center">More Events&nbsp;<i class="fas fa-angle-right"></i></a>
+        </div>
+#}
+
+        <div class="col-sm-6 col-md-8 home__widgets-block">
+          <h2>News</h2>
+          {{ drupal_view('news', 'block_2') }}
+          <footer><a href="{{ path('view.news.page_1') }}" class="button button--primary text-center">More News&nbsp;<i class="fas fa-angle-right"></i></a></footer>
+        </div>
+
+        <div class="col-sm-6 col-md-4 home__widgets-block">
+          <div class="twitter-block">
+            <h2>Latest from Twitter</h2>
+              <a class="twitter-timeline" data-height="900" data-dnt="true" href="https://twitter.com/UBC_CS?ref_src=twsrc%5Etfw">Tweets by UBC_CS</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <footer>
+              <a class="button button--primary view-twitter" href="https://twitter.com/UBC_CS" rel="nofollow noopener">View on Twitter</a>
+            </footer>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

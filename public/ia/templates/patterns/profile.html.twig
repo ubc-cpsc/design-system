@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        {% for i in 0..4 %}
+        <div class="col-sm-12 col-md-6 card-wrapper">
+            <div class="profile">
+                <div class="profile-head">
+                    <div class="contact">
+                        <div class="contact-content">
+                            <p class="name">John Smith</p>
+                            <a class="email" href="#">jsmith@ubc.ca</a>
+                        </div>
+                    </div>
+                    <figure class="profile-image">
+                        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Placeholder image">
+                    </figure>
+                </div>
+
+                <div class="profile-content">
+                    <div class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                        <a href="#">#css</a> <a href="#">#responsive</a>
+                        <br>
+                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

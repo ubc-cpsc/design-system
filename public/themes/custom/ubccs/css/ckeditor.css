@@ -1,0 +1,993 @@
+@charset "UTF-8";
+/**
+ * $file
+ * Approximate clf's style in CKEditor instances on the Drupal back-end.
+ */
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+  font-size: 1.7rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #005554;
+  text-rendering: auto;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  margin-top: 3.4rem;
+  margin-bottom: 1.7rem;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 2.55rem;
+  margin-bottom: 1.7rem;
+}
+
+h1 {
+  font-size: 3.995rem;
+}
+
+h2 {
+  font-size: 2.992rem;
+}
+
+h3 {
+  font-size: 2.499rem;
+}
+
+h4 {
+  font-size: 1.989rem;
+}
+
+h3,
+h4 {
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.5;
+  margin-top: 1.7rem;
+  margin-bottom: 1.7rem;
+}
+
+a {
+  color: #00afa4;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  transition: color 0.5s ease-in;
+}
+
+a:hover,
+a:active {
+  color: #005554;
+}
+
+hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  margin: 3rem auto;
+  width: 40%;
+  padding: 0;
+  background-color: #9e4225;
+  clear: both;
+}
+
+blockquote {
+  border-left: 8px solid #00afa4;
+  list-style-position: inside;
+  margin-left: 0;
+  padding-left: 1em;
+  padding-right: 2em;
+}
+
+:not(pre) > code {
+  padding: 0.2em 0.4em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+:not(pre) > code,
+pre {
+  background-color: #eee;
+}
+
+pre {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+code,
+pre {
+  color: #555;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  -webkit-hyphens: none;
+          hyphens: none;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+}
+
+figure {
+  display: table;
+  margin: 2rem 0;
+}
+figure img {
+  display: block;
+}
+
+figcaption {
+  display: table-caption;
+  caption-side: bottom;
+  max-width: none;
+  padding: 1rem 2rem;
+  font-size: 1.36rem;
+  line-height: 1.2;
+}
+
+figcaption p {
+  margin: 0;
+}
+
+a + figcaption,
+img + figcaption {
+  background: #9e4225;
+  color: #fff;
+}
+
+blockquote + figcaption {
+  color: #555;
+}
+
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+@media print {
+  footer {
+    display: none;
+  }
+}
+form {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  width: auto;
+  overflow: visible;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+label {
+  display: table;
+  margin: 0 0 0.25em;
+  padding: 0;
+  font-weight: bold;
+}
+
+label[for] {
+  cursor: pointer;
+}
+
+fieldset {
+  background-color: #f6fffe;
+  border: 2px solid #00afa4;
+  border-radius: 3px;
+  padding: 1em;
+  margin: 1em 0;
+  min-width: 100%;
+}
+
+.fieldset-wrapper p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+legend {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 0 0.25em;
+}
+
+/**
+ * Limits extra long instances of select elements to the max width allowed
+ * to avoid breaking layouts.
+ */
+select {
+  max-width: 100%;
+}
+
+button,
+input {
+  font-size: 1.7rem;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  vertical-align: baseline;
+}
+
+input {
+  width: auto;
+}
+
+button {
+  width: auto;
+  overflow: visible;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+input,
+textarea,
+select,
+input[type=text] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid #444;
+  border-radius: 0;
+  color: #444;
+  margin: 0;
+  max-width: 100%;
+  padding: 0.5rem 0.8rem;
+}
+input:focus,
+textarea:focus,
+select:focus,
+input[type=text]:focus {
+  outline: 0.2rem solid rgba(82, 168, 236, 0.8);
+  transition: outline ease-in-out 0.2s;
+}
+
+input[type=image] {
+  border: 0;
+}
+
+button:hover,
+input[type=image]:hover,
+input[type=button]:hover,
+input[type=submit]:hover {
+  cursor: pointer;
+}
+
+select {
+  background: #fff url("../img/arrow-both.svg") no-repeat right 1.3rem center;
+  background-size: 1rem;
+  padding-right: 3rem;
+}
+
+select[multiple] {
+  background-image: none;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  padding: 0;
+  display: inline-block;
+}
+
+[type=checkbox],
+[type=radio] {
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+  border: 0;
+  vertical-align: middle;
+}
+[type=checkbox]:focus,
+[type=radio]:focus {
+  outline: none;
+}
+
+[type=checkbox] + label,
+[type=radio] + label {
+  font-weight: 400;
+  margin-left: 0.6rem;
+}
+
+[type=checkbox]::before,
+[type=radio]::before {
+  background-color: #fff;
+  content: " ";
+  display: inline-block;
+  text-indent: 0.15em;
+  vertical-align: middle;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+[type=checkbox]::before {
+  border-radius: 0.2rem;
+  box-shadow: 0 0 0 0.2rem #444;
+  height: 2rem;
+  line-height: 2rem;
+  margin-left: 1px;
+  margin-right: 0.6em;
+  width: 2rem;
+}
+
+[type=radio]::before {
+  border-radius: 100%;
+  box-shadow: 0 0 0 0.2rem #ffffff, 0 0 0 0.4rem #444;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  margin-left: 3px;
+  margin-right: 0.75em;
+  width: 1.4rem;
+}
+
+[type=checkbox]:checked::before,
+[type=radio]:checked::before {
+  background-color: #00afa4;
+  box-shadow: 0 0 0 0.2rem #00afa4;
+}
+
+[type=radio]:checked::before {
+  box-shadow: 0 0 0 0.2rem #fff, 0 0 0 0.4rem #00afa4;
+}
+
+[type=checkbox]:checked::before,
+[type=checkbox]:checked:disabled::before {
+  background-image: url("../img/correct8.svg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+[type=radio]:focus::before {
+  outline: 0.2rem solid rgba(82, 168, 236, 0.8);
+  outline-offset: 6px;
+}
+
+[type=checkbox]:disabled + label {
+  color: #d6d7d9;
+}
+
+[type=checkbox]:focus::before {
+  outline: 0.2rem solid rgba(82, 168, 236, 0.8);
+  outline-offset: 3px;
+}
+
+[type=checkbox]:disabled::before,
+[type=radio]:disabled::before {
+  background: #f1f1f1;
+  box-shadow: 0 0 0 0.2rem #999;
+  cursor: not-allowed;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 1.7rem;
+  margin-left: 0;
+  padding-left: 3.4rem;
+}
+
+li {
+  line-height: 1.5;
+}
+
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+th,
+td {
+  padding: 1rem;
+  border: 0 solid #d7e0e7;
+}
+
+th {
+  vertical-align: bottom;
+  border-bottom-width: 2px;
+}
+
+td {
+  vertical-align: top;
+  border-bottom-width: 1px;
+}
+
+th :first-child,
+td :first-child {
+  margin-top: 0;
+}
+
+th :last-child,
+td :last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * @file
+ * Alignment classes for text and block level elements.
+ */
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-justify {
+  text-align: justify;
+}
+
+/**
+ * Alignment classes for block level elements (images, videos, blockquotes, etc.)
+ */
+.align-left {
+  float: left;
+}
+
+.align-right {
+  float: right;
+}
+
+.align-center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.image--left,
+.image--right,
+.image--center {
+  clear: both;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.align-left,
+.image--left {
+  float: left;
+  margin-right: 2rem;
+}
+
+.align-right,
+.image--right {
+  float: right;
+  margin-left: 2rem;
+}
+
+.align-center,
+.image--center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.button,
+.image-button {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.read-more__link, .button {
+  display: inline-block;
+  padding: 0.7rem 1.7rem;
+  border: 0;
+  border-radius: 0.2rem;
+  background: none;
+  text-decoration: none;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  outline-offset: 2px;
+}
+.button--hover.read-more__link, .button--hover.button, .button--focus.read-more__link, .button--focus.button, .read-more__link:hover, .button:hover, .read-more__link:focus, .button:focus {
+  text-decoration: none;
+  outline: none;
+}
+.button--focus.read-more__link, .button--focus.button, .read-more__link:focus, .button:focus {
+  z-index: 10;
+  outline: 1px dotted #00afa4;
+}
+.button--active.read-more__link, .button--active.button, .read-more__link:active, .button:active {
+  transition: none;
+}
+
+.field-add-more-submit.button {
+  font-size: 0.8em;
+}
+
+.button.form-submit,
+.button--primary {
+  border-color: #00afa4;
+  background-color: #00afa4;
+  color: #fff;
+}
+.button.form-submit.button--hover, .button.form-submit:hover,
+.button--hover.button--primary,
+.button--primary:hover {
+  background-color: #007c74;
+  color: #fff;
+  box-shadow: 0 1px 2px hsla(203deg, 10%, 10%, 0.25);
+}
+.button.form-submit.button--active, .button.form-submit:active,
+.button--active.button--primary,
+.button--primary:active {
+  background-color: #005554;
+  box-shadow: inset 0 1px 3px hsla(0deg, 0%, 0%, 0.2);
+}
+
+.button--secondary {
+  border-color: #005554;
+  background-color: #005554;
+  color: #fff;
+}
+.button--focus.button--secondary, .button--hover.button--secondary, .button--secondary:hover, .button--secondary:focus {
+  background-color: #005554;
+  border-color: #005554;
+  color: #fff;
+}
+.button--hover.button--secondary, .button--secondary:hover {
+  background-color: #007c74;
+  box-shadow: 0 1px 2px hsla(203deg, 10%, 10%, 0.25);
+}
+.button--active.button--secondary, .button--secondary:active {
+  background-color: #003c3b;
+  box-shadow: inset 0 1px 3px hsla(0deg, 0%, 0%, 0.2);
+}
+
+/**
+ * Overrides styling from system.theme.
+ */
+.button-action::before {
+  margin-left: -0.2em;
+  padding-right: 0.2em;
+  font-size: 0.875rem;
+  line-height: 16px;
+}
+
+[dir=rtl] .button-action::before {
+  margin-right: -0.2em;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0.2em;
+}
+
+/* Link actions. */
+/**
+ * Style a clickable/tappable element as a link. Duplicates the base style for
+ * the <a> tag, plus a reset for padding, borders and background.
+ */
+.link {
+  display: inline;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-decoration: none;
+  color: #00afa4;
+}
+.link:hover, .link:active {
+  text-decoration: underline;
+  color: #005554;
+}
+
+/**
+ * We've temporarily added the danger button here, bit of a harsh reset but we
+ * need it.
+ * @todo replace with link--danger.
+ * See https://www.drupal.org/node/2123731
+ */
+.button--danger {
+  display: inline;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: none;
+  color: #c72100;
+  text-decoration: underline;
+}
+.button--danger.button--focus, .button--danger.button--hover, .button--danger.button--active, .button--danger:hover, .button--danger:focus, .button--danger:active {
+  color: #ff2a00;
+  text-decoration: underline;
+  text-shadow: none;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: none;
+}
+.button--danger:disabled, .button--danger.is-disabled {
+  color: #737373;
+  cursor: default;
+  text-decoration: none;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: none;
+}
+
+.read-more__link,
+.button--outline {
+  color: #00afa4;
+  box-shadow: inset 0 0 0 2px #00afa4;
+}
+.button--hover.read-more__link, .read-more__link:hover,
+.button--outline.button--hover,
+.button--outline:hover {
+  box-shadow: inset 0 0 0 2px #007c74;
+  color: #007c74;
+}
+.button--active.read-more__link, .read-more__link:active,
+.button--outline.button--active,
+.button--outline:active {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #005554;
+  box-shadow: inset 0 0 0 2px #005554;
+}
+
+.button--inverse {
+  color: #fff;
+  box-shadow: inset 0 0 0 2px #fff;
+}
+.button--inverse.button--hover, .button--inverse.button--active, .button--inverse:hover, .button--inverse:active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+.button--inverse.button--active, .button--inverse:active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.button--large {
+  border-radius: 0.3rem;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+}
+
+.read-more__link,
+.button--small {
+  font-size: 1.5rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.button:disabled,
+.button:disabled:active,
+.button.is-disabled,
+.button.is-disabled:active {
+  background-color: #ededed;
+  box-shadow: none;
+  color: #5c5c5c;
+  cursor: default;
+  text-shadow: 0 1px hsla(0deg, 0%, 100%, 0.6);
+}
+
+.read-more {
+  margin-top: 2rem;
+}
+
+.caption {
+  display: table;
+}
+
+.caption > * {
+  display: block;
+  max-width: 100%;
+}
+
+.caption > figcaption {
+  display: table-caption;
+  max-width: none;
+  caption-side: bottom;
+}
+
+.media + figcaption {
+  background: #9e4225;
+  color: #fff;
+}
+
+.caption .media .field {
+  line-height: 1;
+}
+
+/* Override clf's default blockquote and pre styles when captioned. */
+.caption-pre > pre,
+.caption-blockquote > blockquote {
+  margin: 0;
+}
+
+.caption-blockquote > figcaption::before {
+  content: "— ";
+}
+
+.caption-blockquote > figcaption {
+  text-align: left;
+}
+
+[dir=rtl] .caption-blockquote > figcaption {
+  text-align: right;
+}
+
+details {
+  padding: 0.5rem 0;
+  border: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+details > .node__content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.details--small {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0;
+}
+.details--small summary {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+details > .details-wrapper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.details-wrapper {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.details-wrapper > :last-child {
+  margin-bottom: 1rem;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary {
+  font-size: 2rem;
+  background-repeat: no-repeat;
+  background-position: right 1rem top 50%;
+  background-size: 1.7rem 1.7rem;
+  color: #00afa4;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M53 29H35V11a3 3 0 00-6 0v18H11a3 3 0 000 6h18v18a3 3 0 006 0V35h18a3 3 0 000-6z' fill='%2300afa4'/%3E%3C/svg%3E");
+  border-bottom: 1px solid #005554;
+  padding-right: 3rem;
+  padding-left: 1rem;
+}
+
+details[open] summary {
+  border-bottom-width: 3px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M53 34H11a3 3 0 010-6h42a3 3 0 010 6z' fill='%2300afa4'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 767.98px) {
+  details summary {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.node__header_image img {
+  width: 100%;
+  height: auto;
+}
+
+.inline-block-left,
+.inline-block-right {
+  margin: 0 0 1rem 0;
+  padding: 2rem;
+  background-color: #005554;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .inline-block-left,
+  .inline-block-right {
+    max-width: 260px;
+    width: 100%;
+  }
+}
+.inline-block-left h2,
+.inline-block-left h3,
+.inline-block-left h4,
+.inline-block-left a,
+.inline-block-right h2,
+.inline-block-right h3,
+.inline-block-right h4,
+.inline-block-right a {
+  color: #fff;
+}
+.inline-block-left h2,
+.inline-block-left h3,
+.inline-block-left h4,
+.inline-block-right h2,
+.inline-block-right h3,
+.inline-block-right h4 {
+  margin-top: 0;
+}
+
+.inline-block-left {
+  margin-right: 2rem;
+}
+@media (min-width: 768px) {
+  .inline-block-left {
+    float: left;
+    clear: left;
+  }
+}
+
+.inline-block-right {
+  margin-left: 2rem;
+}
+@media (min-width: 768px) {
+  .inline-block-right {
+    float: right;
+    clear: right;
+  }
+}
+
+.media--type-logo {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 2rem;
+}
+.media--type-logo div {
+  line-height: 0;
+}
+.media--type-logo img {
+  object-fit: contain;
+}
+
+.media--type-logo:first-of-type {
+  padding-left: 0;
+}
+
+.node table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #d7e0e7;
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
+.node td,
+.node th {
+  border: 0 solid #d7e0e7;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  padding: 0.5rem 0.8rem;
+  text-align: left;
+}
+.node thead th {
+  vertical-align: bottom;
+}
+
+td.is-active {
+  background-color: transparent;
+}
+
+.text-primary {
+  color: #9e4225;
+}
+
+.text-secondary {
+  color: #005554;
+}
+
+.text-large {
+  font-size: 3.4rem;
+}
+
+.intro {
+  color: #cc6e20;
+  font-size: 2.2rem;
+}
+
+.caption > * {
+  background: transparent;
+  padding: 0;
+  border: 0;
+}
+
+.caption > figcaption {
+  border: 0;
+  padding: 1rem 2rem;
+  text-align: left;
+  font-size: 1.36rem;
+}
+
+.caption .cke_image_resizer_wrapper + figcaption {
+  background: #9e4225;
+  color: #fff;
+}
+
+.cke_show_borders table.cke_show_border,
+.cke_show_borders table.cke_show_border > tr > td,
+.cke_show_borders table.cke_show_border > tr > th,
+.cke_show_borders table.cke_show_border > tbody > tr > td,
+.cke_show_borders table.cke_show_border > tbody > tr > th,
+.cke_show_borders table.cke_show_border > thead > tr > td,
+.cke_show_borders table.cke_show_border > thead > tr > th,
+.cke_show_borders table.cke_show_border > tfoot > tr > td,
+.cke_show_borders table.cke_show_border > tfoot > tr > th {
+  border: #000 1px dotted !important;
+}
+
+.cke_widget_element .media {
+  min-width: 100px;
+}
+
+.cke_widget_drupalmedia {
+  display: inline-block;
+}

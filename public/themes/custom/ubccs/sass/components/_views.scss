@@ -1,0 +1,41 @@
+@import '../variables';
+@import '../bootstrap-no-output';
+
+
+.views-exposed-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: space-around;
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.views-exposed-form .form-item,
+.views-exposed-form .form-actions {
+  margin: 1rem;
+  // Prevent long fields from breaking multiple lines.
+  @include media-breakpoint-up(md) {
+    max-width: 240px;
+  }
+}
+
+.views-exposed-form .form-actions {
+  align-self: flex-end;
+}
+
+.views-field-view-node,
+.news-image img {
+  margin-top: 1rem;
+}
+
+.views-row + .views-row::before {
+  content: "";
+  display: block;
+  height: 2px;
+  border: 0;
+  margin: 2rem auto;
+  width: 100%;
+  padding: 0;
+  background-color: #e6e6e6;
+}

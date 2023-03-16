@@ -1,0 +1,221 @@
+@import '../variables';
+@import "../bootstrap-no-output";
+
+.profile-display {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
+  .profile-item {
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    display: flex;
+    flex: 1 1 100%;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .profile-item {
+      flex: 1 1 50%;
+
+      &:first-of-type {
+        flex: 1 1 100%;
+      }
+    }
+  }
+}
+
+.profile--teaser {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  display: flex;
+
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-grow: 1;
+
+  border: 1px solid #e4e4e4;
+  border-radius: 1rem;
+  padding: 3rem;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  &__image {
+    margin: auto;
+
+    .image-default,
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    text-align: center;
+
+    & + div {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__content__name {
+    font-size: 2.4rem;
+  }
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  & > .field + .field {
+    margin: 0;
+  }
+
+  div {
+    flex: 1 1 50%;
+  }
+
+  &-content {
+    &-job-title {
+      margin: 0;
+      font-size: 2rem;
+    }
+  }
+}
+
+.field--label-inline {
+  .profile-people {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: auto;
+
+    .field--label-inline .field__label,
+    .field--label-inline > .field__item:nth-child(2) {
+      padding: 0;
+    }
+  }
+}
+
+.contact-content-name,
+.contact-content-job-title {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+  display: inline-block;
+}
+
+// Profile Page.
+.profile-people {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  width: 100%;
+
+  &__content {
+    flex-grow: 4;
+    flex-shrink: 1;
+    flex-basis: 50%;
+  }
+
+  &__image {
+    margin: 20px;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+
+    @include media-breakpoint-up(sm) {
+      order: 2;
+    }
+
+    .image-default,
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+
+      padding: 1.2rem;
+      border: 2px solid $ubc-silver;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .profile-alumni__header {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+  }
+
+  .profile-alumni__intro {
+    width: 100%;
+  }
+  .profile-alumni-image {
+    margin: 20px;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+
+    order: 2;
+    .profile-image{
+      margin: 0;
+    }
+    .profile-image img {
+      max-width: 200px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+
+      padding: 1.2rem;
+      border: 2px solid $ubc-silver;
+    }
+  }
+}
+
+.image-default {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  background-color: $ubc-grey;
+  color: $white;
+  font-size: 5rem;
+}
+
+// People Listing profile images.
+.profile-image img,
+.profile-image .image-default {
+  // Combat default responsive image max-width.
+  max-width: 100px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile-image .image-default {
+  font-size: 4rem;
+}
+
+// People Page column min-width
+.views-field-field-person-lname {
+  min-width: 20ch;
+}

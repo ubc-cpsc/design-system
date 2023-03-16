@@ -1,0 +1,124 @@
+{% extends "base.twig" %}
+
+{% block body %}
+  <style>
+
+    .pattern .pattern-source textarea {
+      width: 100%;
+    }
+
+    .pattern {
+      display: flex;
+      flex-wrap: wrap;
+      background: #e5e5e5;
+      margin-bottom: 2rem;
+
+    }
+    .pattern-input {
+      position: absolute;
+      opacity: 0;
+    }
+    .pattern-title {
+      margin: 0.5rem 1rem !important;
+      flex: 1 1 auto;
+    }
+    .pattern-label {
+      width: 100%;
+      padding: .5rem 2rem;
+      background: #e5e5e5;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 18px;
+      color: #7f7f7f;
+      transition: background 0.1s, color 0.1s;
+      margin: 0.5rem 0.5rem 0 0.5rem !important;
+    }
+
+    .pattern-label::before {
+      display: none !important;
+    }
+    .pattern-label:hover {
+      background: #d8d8d8;
+    }
+    .pattern-label:active {
+      background: #ccc;
+    }
+    .pattern-input:focus + .pattern-label {
+      box-shadow: inset 0 0 0 3px #2aa1c0;
+      z-index: 1;
+    }
+    .pattern-input:checked + .pattern-label {
+      background: #fff;
+      color: #000;
+    }
+    @media (min-width: 600px) {
+      .pattern-label {
+        width: auto;
+      }
+    }
+    .pattern-panel {
+      display: none;
+      padding: 20px 30px 30px;
+      background: #fff;
+      width: 100%;
+    }
+    @media (min-width: 600px) {
+      .pattern-panel {
+        order: 99;
+      }
+    }
+    .pattern-input:checked + .pattern-label + .pattern-panel {
+      display: block;
+    }
+
+  </style>
+
+<main role="main" id="main-content" class="layout-wrapper" tabindex="-1">
+  <div class="layout-content">
+    <article class="node node--type-page node--view-mode-full">
+      <h1>Patterns</h1>
+
+    {% for pattern in patterns %}
+      {% set pattern_id = pattern %}
+      <div class="pattern" id="{{ pattern_id }}">
+        <h3 class="pattern-title">{{ pattern|replace({'.html': '', '.html.twig': '', '-': ' '})|capitalize }} <a class="permalink" href="#{{ pattern_id }}" aria-hidden="true">#</a></h3>
+
+        <input class="pattern-input" name="{{ pattern_id }}-tabs" type="radio" id="{{ pattern_id }}-tab-1" checked="checked"/>
+        <label class="pattern-label" for="{{ pattern_id }}-tab-1">View</label>
+        <div class="pattern-panel">
+          {% include 'patterns/' ~ pattern %}
+        </div>
+
+        <input class="pattern-input" name="{{ pattern_id }}-tabs" type="radio" id="{{ pattern_id }}-tab-2"/>
+        <label class="pattern-label" for="{{ pattern_id }}-tab-2">Source</label>
+        <div class="pattern-panel pattern-source">
+          <textarea rows="6" cols="30">
+            {%- filter escape -%}
+            {% include 'patterns/' ~ pattern %}
+            {%- endfilter -%}
+          </textarea>
+          <p><a href="/ia/templates/patterns/{{ pattern }}">{{ pattern }}</a></p>
+        </div>
+
+      </div>
+    {% endfor %}
+    </article>
+  </div>
+
+  <aside class="layout-sidebar-first" role="complementary">
+    <nav role="navigation" class="sub-menu">
+      <ul>
+        {% for pattern in patterns %}
+          <li>
+            <div class="menu-item__label">
+              <a class="menu-item__link" href="#{{ pattern }}">
+                {{ pattern|replace({'.html': '', '.html.twig': '', '-': ' '})|capitalize }}
+              </a>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </aside>
+</main>
+{% endblock %}

@@ -1,0 +1,13 @@
+{#
+    Generic Layout for all landing page content-type, which includes
+    the conditions and injects ext.twig files
+#}
+{% extends "node.html.twig" %}
+
+{% block pre_content_custom_views %}
+  {{ pre_content_custom_blocks }}
+{% endblock %}
+
+{% block post_content_custom_views %}
+  {{ post_content_custom_blocks }}
+{% endblock %}

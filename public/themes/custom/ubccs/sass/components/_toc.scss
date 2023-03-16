@@ -1,0 +1,18 @@
+// Table of Contents Filter.
+
+.node .toc-tree {
+  border: 1px solid #ccc;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.toc-tree ol.none {
+  padding: 0
+}
+.toc-tree h3 {
+  margin: 0 0;
+}
+.toc-tree > ol,
+.toc-tree > ul {
+  margin: 2rem 0;
+}

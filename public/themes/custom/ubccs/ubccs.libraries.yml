@@ -1,0 +1,107 @@
+# Global Styles.
+global:
+  css:
+    base:
+      css/normalize.css: { weight: -20 }
+    component:
+      /core/themes/classy/css/components/action-links.css: { weight: -10 }
+      /core/themes/classy/css/components/breadcrumb.css: { weight: -10 }
+      /core/themes/classy/css/components/button.css: { weight: -10 }
+      /core/themes/classy/css/components/collapse-processed.css: { weight: -10 }
+      /core/themes/classy/css/components/container-inline.css: { weight: -10 }
+      /core/themes/classy/css/components/details.css: { weight: -10 }
+      /core/themes/classy/css/components/exposed-filters.css: { weight: -10 }
+      /core/themes/classy/css/components/field.css: { weight: -10 }
+      /core/themes/classy/css/components/form.css: { weight: -10 }
+      /core/themes/classy/css/components/icons.css: { weight: -10 }
+      /core/themes/classy/css/components/inline-form.css: { weight: -10 }
+      /core/themes/classy/css/components/item-list.css: { weight: -10 }
+      /core/themes/classy/css/components/link.css: { weight: -10 }
+      /core/themes/classy/css/components/links.css: { weight: -10 }
+      /core/themes/classy/css/components/menu.css: { weight: -10 }
+      /core/themes/classy/css/components/more-link.css: { weight: -10 }
+#      /core/themes/classy/css/components/pager.css: false
+      /core/themes/classy/css/components/tabledrag.css: { weight: -10 }
+      /core/themes/classy/css/components/tableselect.css: { weight: -10 }
+      /core/themes/classy/css/components/tablesort.css: { weight: -10 }
+      /core/themes/classy/css/components/tabs.css: { weight: -10 }
+      /core/themes/classy/css/components/textarea.css: { weight: -10 }
+      /core/themes/classy/css/components/ui-dialog.css: { weight: -10 }
+      css/select2.css: {}
+    theme:
+      css/local.clf.fixes.css: {}
+      css/main.css: {}
+      css/layout.css: {}
+      css/timeline.css: {}
+      css/print.css: { media: print }
+  js:
+    js/main.js: {}
+
+# Fancybox.
+fancybox:
+  css:
+    theme:
+      js/vendor/fancybox/jquery.fancybox.css: {}
+  js:
+    js/vendor/fancybox/jquery.fancybox.js: {}
+
+# Bootstrap Styles.
+bootstrap:
+  css:
+    theme:
+      css/bootstrap.css: { weight: -9 }
+
+font:
+  remote: https://fonts.google.com
+  license:
+    name: Apache License, Version 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+    gpl-compatible: false
+  css:
+    base:
+      'https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap':
+        type: external
+        weight: -20
+
+# Fontawesome JS.
+fontawesome.svg.base:
+  version: 5.13.1
+  license:
+    url: https://fontawesome.com/license
+    gpl-compatible: false
+  header: true
+  js:
+    /libraries/fontawesome/js/fontawesome.min.js: { minified: true }
+
+fontawesome.svg.regular:
+  version: 5.13.1
+  license:
+    url: https://fontawesome.com/license
+    gpl-compatible: false
+  header: true
+  js:
+    /libraries/fontawesome/js/regular.min.js: { minified: true }
+  dependencies:
+    - ubccs/fontawesome.svg.base
+
+fontawesome.svg.solid:
+  version: 5.13.1
+  license:
+    url: https://fontawesome.com/license
+    gpl-compatible: false
+  header: true
+  js:
+    /libraries/fontawesome/js/solid.min.js: { minified: true }
+  dependencies:
+    - ubccs/fontawesome.svg.base
+
+fontawesome.svg.brands:
+  version: 5.13.1
+  license:
+    url: https://fontawesome.com/license
+    gpl-compatible: false
+  header: true
+  js:
+    /libraries/fontawesome/js/brands.min.js: { minified: true }
+  dependencies:
+    - ubccs/fontawesome.svg.base

@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Timeline template.
+ */
+#}
+{% extends "page.html.twig" %}
+
+{% block layout_content %}
+  <div class="layout-content layout-content-full-width">
+    {# Let the node template deal with the title. #}
+    {{ node ? page.content|without('ubccs_page_title') : page.content }}
+  </div>
+{% endblock %}

@@ -1,0 +1,92 @@
+<form>
+
+  <div class="form-wrapper">
+    <div class="form-item">
+      <label>Email</label>
+      <input type="email">
+    </div>
+  </div>
+
+  <div class="form-wrapper">
+    <div class="form-item">
+      <label>Number</label>
+      <input type="number">
+    </div>
+  </div>
+
+  <div class="form-wrapper">
+    <div class="form-item">
+      <label>Select</label>
+      <select>
+        <option>option text</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-wrapper">
+    <div class="form-item">
+      <input type="checkbox" name="checkbox[]" checked id="checkbox-option-1"><label for="checkbox-option-1" class="option">Label text</label>
+    </div>
+    <div class="form-item">
+      <input type="checkbox" name="checkbox[]" id="checkbox-option-2"><label for="checkbox-option-2" class="option">Label text</label>
+    </div>
+  </div>
+
+  <div class="form-wrapper">
+    <div class="form-item">
+      <input type="radio" name="radio" checked id="radio-option-1"><label for="radio-option-1" class="option">Label text</label>
+    </div>
+    <div class="form-item">
+      <input type="radio" name="radio" id="radio-option-2"><label for="radio-option-2" class="option">Label text</label>
+    </div>
+  </div>
+
+  <div class="form-wrapper">
+    <div class="form-item">
+      <label>Text</label>
+      <input type="text">
+    </div>
+  </div>
+
+  <div class="form-wrapper">
+    <div class="form-item">
+      <label>Url</label>
+      <input type="url">
+    </div>
+  </div>
+
+
+  <div class="form-wrapper">
+    <div class="form-item">
+      <label>Textarea</label>
+      <textarea rows="5" cols="30"></textarea>
+    </div>
+  </div>
+
+  <div class="field--type-list-string field--widget-options-select form-wrapper">
+    <div class="form-item js-form-type-select form-type-select ">
+      <label for="edit-field-job-year">Job year level</label>
+
+      <select multiple="multiple" name="field_job_year[]" id="edit-field-job-year" class="form-select">
+        <option value="_none">- None -</option>
+        <option value="1">First year</option>
+        <option value="2" selected="selected">Second year</option>
+        <option value="3" selected="selected">Third year</option>
+        <option value="4" selected="selected">Fourth year</option>
+        <option value="MA">Masters</option>
+        <option value="PhD">PhD</option>
+        <option value="UG">Graduated Undergrad</option>
+        <option value="MAG">Graduated Masters</option>
+        <option value="PhDG">Graduated PhD</option>
+      </select>
+    </div>
+  </div>
+
+
+  <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+
+    <input type="submit" id="edit-submit" name="op" value="Save" class="button button--primary form-submit">
+
+    <a href="#" class="button button--danger" id="edit-delete" hreflang="en">Delete</a></div>
+
+</form>

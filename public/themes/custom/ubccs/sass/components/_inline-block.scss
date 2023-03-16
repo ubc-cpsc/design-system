@@ -1,0 +1,47 @@
+@import '../variables';
+@import '../bootstrap-no-output';
+
+.inline-block-left,
+.inline-block-right {
+  @include media-breakpoint-up(md) {
+    max-width: 260px;
+    width: 100%;
+  }
+
+  margin: 0 0 1rem 0;
+  padding: 2rem;
+
+  background-color: $dark-teal;
+  color: #fff;
+
+  h2,
+  h3,
+  h4,
+  a {
+    color: #fff;
+  }
+
+  h2,
+  h3,
+  h4 {
+    margin-top: 0;
+  }
+}
+
+.inline-block-left {
+  @include media-breakpoint-up(md) {
+    float: left;
+    clear: left;
+  }
+
+  margin-right: 2rem;
+}
+
+.inline-block-right {
+  @include media-breakpoint-up(md) {
+    float: right;
+    clear: right;
+  }
+
+  margin-left: 2rem;
+}

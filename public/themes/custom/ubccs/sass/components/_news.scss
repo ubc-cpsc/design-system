@@ -1,0 +1,45 @@
+@import '../variables';
+
+// Set width to max half of the image style.
+.news--teaser__image {
+  max-width: 115px;
+}
+
+.news--teaser__image img {
+  border-left: 5px solid $teal;
+  margin: 0 0 2rem;
+}
+
+@include media-breakpoint-up(sm) {
+  .news--teaser {
+    display: flex;
+  }
+
+  .news--teaser__image {
+    order: 2;
+    flex-shrink: 0;
+  }
+
+  .news--teaser__image img {
+    margin: 0 2rem;
+  }
+}
+
+.news--teaser__image a {
+  display: block;
+  line-height: 0;
+}
+
+
+.news--teaser__text {
+  flex-grow: 1;
+}
+
+// Remove margin from teaser header.
+.news--teaser__header {
+  margin: 0;
+}
+
+.news--teaser__date {
+  color: $gray-light;
+}

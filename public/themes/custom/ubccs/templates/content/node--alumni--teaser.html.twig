@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Theme override to display a node teaser.
+ */
+#}
+<div{{ attributes }}>
+  {{ title_suffix.contextual_links }}
+  <div class="profile-alumni profile-alumni--teaser">
+    <figure class="profile-alumni__image profile-image">
+      {% if content.field_node_image_vertical %}
+        {{ content.field_node_image_vertical }}
+      {% else %}
+        <div class="image-default">
+          {% set alumni_name_split = node.getTitle()|split(' ') %}
+          {{ alumni_name_split[0][:1]|upper }}{{ alumni_name_split[1][:1]|upper }}
+        </div>
+      {% endif %}
+    </figure>
+
+    <div class="profile-alumni__content">
+      <div{{ title_attributes.addClass('profile-alumni__name') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </div>
+      {{ content|without('field_node_image_vertical') }}
+      <div class="read-more">
+        <a href="{{ url }}" class="read-more__link">Discover More <i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

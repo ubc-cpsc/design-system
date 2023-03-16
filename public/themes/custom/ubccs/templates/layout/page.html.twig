@@ -1,0 +1,250 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ */
+#}
+{% set maincontent_attributes = create_attribute() %}
+{% set sidebarfirst_attributes = create_attribute() %}
+{% set sidebarsecond_attributes = create_attribute() %}
+<!-- UBC Global Utility Menu -->
+<div class="collapse clf-required" id="ubc7-global-menu">
+  <div id="ubc7-search">
+    <div class="container">
+      <div id="ubc7-search-box">
+        <form class="form-search" method="get" action="https://www.ubc.ca/search/refine/" role="search">
+          {% if searchlabel_option %}
+            <input type="text" name="q" placeholder="{{ searchlabel_option }}" class="input-xlarge search-query">
+          {% else %}
+            <input type="text" name="q" placeholder="Search this website" class="input-xlarge search-query">
+          {% endif %}
+          <input type="hidden" name="label" value="Search" />
+          {% if searchdomain_option %}
+            <input type="hidden" name="site" value="{{ searchdomain_option }}" />
+          {% else %}
+            <input type="hidden" name="site" value="*.ubc.ca" />
+          {% endif %}
+          <button type="submit" class="button button--primary">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div id="ubc7-global-header">
+      <!-- Global Utility Header from CDN -->
+    </div>
+  </div>
+</div>
+<!-- End of UBC Global Utility Menu -->
+<header id="ubc7-header" class="row-fluid clf-required" role="banner">
+  <div class="container">
+    <div class="span1">
+      <div id="ubc7-logo">
+        <a href="http://www.ubc.ca">The University of British Columbia</a>
+      </div>
+    </div>
+    <div class="span2">
+      <div id="ubc7-apom">
+        <a href="//cdn.ubc.ca/clf/ref/aplaceofmind">UBC - A Place of Mind</a>
+      </div>
+    </div>
+    <div class="span9" id="ubc7-wordmark-block">
+      <div id="ubc7-wordmark">
+        <a href="http://www.ubc.ca">The University of British Columbia</a>
+        {% if campus_option == 'vancouver' %}
+          <span class="ubc7-campus" id="ubc7-vancouver-campus">Vancouver Campus</span>
+        {% endif %}
+        {% if campus_option == 'okanagan' %}
+          <span class="ubc7-campus" id="ubc7-okanagan-campus">Okanagan Campus</span>
+        {% endif %}
+      </div>
+      <div id="ubc7-global-utility">
+        <button type="button" data-toggle="collapse" data-target="#ubc7-global-menu"><span>UBC Search</span></button>
+        <noscript><a id="ubc7-global-utility-no-script" href="http://www.ubc.ca/">UBC Search</a></noscript>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- End of UBC Header -->
+<!-- UBC Unit Identifier -->
+<div id="ubc7-unit" class="row no-gutters clf-required">
+  <div class="container">
+    <!-- Mobile Menu Icon -->
+    <div class="utility-menu">
+      <a class="btn btn-navbar" href="https://my.cs.ubc.ca">
+        <i class="fas fa-sign-in-alt"></i> My CS
+      </a>
+    </div>
+    <div class="navbar">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target="#ubc7-unit-navigation">
+        <i class="fas fa-bars"></i> Menu
+      </a>
+    </div>
+    <div id="ubc7-unit-name"{{ faculty_option != '' ? ' class="ubc7-single-element"' }}>
+      <a href="{{ base_path }}">
+        {% if faculty_option == '' %}
+          <span id="ubc7-unit-faculty">{{ faculty_name }}</span>
+        {% endif %}
+        <span id="ubc7-unit-identifier">{{ unit_name }}</span>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- End of UBC Unit Identifier -->
+<!-- UBC Unit Navigation -->
+<nav id="ubc7-unit-menu" role="navigation" class="navbar clf-required">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapse collapse" id="ubc7-unit-navigation">
+        {{ page.primary_menu }}
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- End of UBC Unit Navigation -->
+
+<main class="full-width-container non-clf">
+  {{ page.breadcrumb }}
+
+  {% if page.featured %}
+    <aside class="section" role="complementary">
+      {{ page.featured }}
+    </aside>
+  {% endif %}
+
+  <div class="container{% if is_front %}-home{% endif %}">
+    {% if page.highlighted %}
+      <div id="highlighted">{{ page.highlighted }}</div>
+    {% endif %}
+
+    <header role="banner">
+      {{ page.header }}
+    </header>
+
+    <main role="main" id="main-content" class="layout-wrapper" tabindex="-1">
+
+      {% block layout_content %}
+      <div class="layout-content{{ page.sidebar_first or page.sidebar_second ? ' has-sidebar' }}">
+        {# Let the node template deal with the title. #}
+        {{ node ? page.content|without('ubccs_page_title') : page.content }}
+      </div>
+
+      {% if page.sidebar_first %}
+        <aside class="layout-sidebar-first" role="complementary">
+          {{ page.sidebar_first }}
+        </aside>
+      {% endif %}
+
+      {% if page.sidebar_second %}
+        <aside class="layout-sidebar-second" role="complementary">
+          {{ page.sidebar_second }}
+        </aside>
+      {% endif %}
+
+      {% endblock %}
+    </main>
+
+    {% if page.footer %}
+      <footer role="contentinfo">
+        {{ page.footer }}
+      </footer>
+    {% endif %}
+
+  </div>
+</main>
+<!-- End of Content Area -->
+<!-- End of Unit Content Area -->
+
+{% if page.prefooter %}
+  <section id="prefooter-content" class="non-clf" role="complementary">
+    {{ page.prefooter }}
+  </section>
+{% endif %}
+
+<footer id="ubc7-unit-footer" class="clf-required" role="contentinfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 unit-footer-column" id="ubc7-unit-address">
+        <div id="ubc7-address-unit-name">{{ unit_name }}</div>
+        {% if campus_option %}
+          <div id="ubc7-address-campus">{% if campus_option == 'vancouver' %}Vancouver Campus{% endif %}{% if campus_option == 'okanagan' %}Okanagan Campus{% endif %}</div>
+        {% endif %}
+        {% if address_option %}
+          <div id="ubc7-address-street">{{ address_option }}</div>
+        {% endif %}
+        {% if locality_option or region_option or country_option or postal_option %}
+          <div id="ubc7-address-location">
+            {% if locality_option %}<span id="ubc7-address-city">{{ locality_option }}</span>, {% endif %}
+            {% if region_option %}<span id="ubc7-address-province">{{ region_option }}</span> {% endif %}
+            {% if country_option %}<span id="ubc7-address-country">{{ country_option }}</span> {% endif %}
+            {% if postal_option %}<span id="ubc7-address-postal">{{ postal_option }}</span>{% endif %}
+          </div>
+        {% endif %}
+        {% if phone_option %}<div id="ubc7-address-phone">{{ phone_option }}</div>{% endif %}
+        {% if fax_option %}<div id="ubc7-address-fax">{{ fax_option }}</div>{% endif %}
+        <a href="{{ base_url }}/contact#map">Map &amp; Directions</a>
+
+        {% if website_option %}<div id="ubc7-address-website">Website {{ website_option }}</div>{% endif %}
+      </div>
+      <div class="col-md-5 unit-footer-column">
+        <strong>Ways to get in touch</strong>
+        <div><a href="{{ base_url }}/contact">Contact Us</a></div>
+        <div><a href="{{ base_url }}/people">Department Directory</a></div>
+
+{#        <strong>Contact</strong>#}
+{#        <div id="ubc7-address-email">Undergrad program <a href="mailto:undergrad-info@cs.ubc.ca">undergrad-info@cs.ubc.ca</a></div>#}
+{#        <div id="ubc7-address-email">Graduate program <a href="mailto:grad-info@cs.ubc.ca">grad-info@cs.ubc.ca</a></div>#}
+{#        <div id="ubc7-address-email">General/Computer Support <a href="mailto:help@cs.ubc.ca">help@cs.ubc.ca</a></div>#}
+      </div>
+      <div class="col-md-2 unit-footer-column">
+        {% if facebook_option or twitter_option or youtube_option or linkedin_option or instagram_option %}
+          <strong>Find us on</strong>
+          <div id="ubc7-unit-social-icons">
+            {% if facebook_option %}<a href="{{ facebook_option }}"><i class="icon-facebook-sign" aria-hidden="true"></i></a>&nbsp;{% endif %}
+            {% if twitter_option %}<a href="{{ twitter_option }}"><i class="icon-twitter-sign" aria-hidden="true"></i></a>&nbsp;{% endif %}
+            {% if youtube_option %}<a href="{{ youtube_option }}"><i class="icon-youtube-sign" aria-hidden="true"></i></a>&nbsp;{% endif %}
+            {% if linkedin_option %}<a href="{{ linkedin_option }}"><i class="icon-linkedin-sign" aria-hidden="true"></i></a>&nbsp;{% endif %}
+            {% if instagram_option %}<a href="{{ instagram_option }}"><i class="icon-instagram-sign" aria-hidden="true"></i></a>{% endif %}
+          </div>
+        {% endif %}
+      </div>
+      <!-- Footer quick links menu -->
+      <div class="container footer-quick-links text-right">
+        <ul>
+          {% if logged_in %}
+            <li><a href="{{ url('user.logout') }}">Logout</a></li>
+          {% else %}
+            <li><a href="{{ url('samlauth.saml_controller_login', {}, { query: destination }) }}">Login</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-fluid row no-gutters" id="ubc7-global-footer">
+    <div class="container">
+      <div class="span5" id="ubc7-signature"><a href="http://www.ubc.ca/">The University of British Columbia</a></div>
+      <div class="span7" id="ubc7-footer-menu"></div>
+    </div>
+  </div>
+
+  <div class="row-fluid row no-gutters" id="ubc7-minimal-footer">
+    <div class="container">
+      <div class="span12">
+        <ul>
+          <li><a href="//cdn.ubc.ca/clf/ref/emergency">Emergency Procedures</a> <span class="divider">|</span></li>
+          <li><a href="//cdn.ubc.ca/clf/ref/terms">Terms of Use</a> <span class="divider">|</span></li>
+          <li><a href="//cdn.ubc.ca/clf/ref/copyright">UBC Copyright</a> <span class="divider">|</span></li>
+          <li><a href="//cdn.ubc.ca/clf/ref/accessibility">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<div id="back-to-top" role="navigation">
+  <a class="back-to-top__button" href="#" title="Back to top">
+    <i class="ubc7-arrow white up-arrow" aria-hidden="true"></i>
+  </a>
+</div>

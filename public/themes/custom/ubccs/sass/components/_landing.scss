@@ -1,0 +1,23 @@
+
+// Remove partial underline on all landing pages.
+.node--type-landing .page-title::after {
+  display: none;
+}
+
+.node--type-landing .views-element-container,
+.node--type-landing .block {
+  // 80 characters per line.
+  max-width: 80ch;
+  margin: 0 auto;
+}
+
+// Separate the node content from blocks under it.
+.node--type-landing .node__content + .block::before {
+  width: 50%;
+  max-width: 220px;
+  height: 3px;
+  background-color: $burnt-sienna;
+  margin: 0 auto;
+  content: '';
+  display: inline-block;
+}

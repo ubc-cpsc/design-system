@@ -1,0 +1,75 @@
+@import '../variables';
+
+.node > :not(div, header, footer, table) {
+  // Line measure.
+  max-width: 72rem;
+}
+
+.node__meta {
+  // Wrap if flex.
+  flex-basis: 100%;
+}
+
+.layout__region--content > .field,
+.page-title {
+  // Line measure.
+  max-width: 72rem;
+}
+
+.node__submitted {
+  color: $gray-light;
+  margin: 1rem 0 2rem;
+  font-size: 1.5rem;
+}
+
+.node--unpublished {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: block;
+
+    content: 'DRAFT';
+    font-size: 5rem;
+    opacity: .2;
+    color: $gray-light;
+    transform: rotate(40deg);
+  }
+}
+
+.node--view-mode-full {
+  // Push page content off the title.
+  margin-top: 2rem;
+}
+
+.node__additional-content:before {
+  content: '';
+  background-color: $burnt-sienna;
+  height: 3px;
+  width: 50%;
+  display: block;
+  margin: 3rem auto;
+}
+
+.node__ical {
+  font-size: 2.5rem;
+  text-align: right;
+}
+
+// Line length enforcement.
+.field--name-body {
+  h2,
+  h3,
+  h4,
+  h5 {
+    max-width: 50ch;
+  }
+
+  li,
+  p {
+    max-width: 75ch;
+  }
+}

@@ -1,0 +1,834 @@
+@charset "UTF-8";
+/**
+ * $file
+ * Approximate clf's style in CKEditor instances on the Drupal back-end.
+ */
+.ck-content {
+  /**
+   * Limits extra long instances of select elements to the max width allowed
+   * to avoid breaking layouts.
+   */
+  /**
+   * @file
+   * Alignment classes for text and block level elements.
+   */
+  /**
+   * Alignment classes for block level elements (images, videos, blockquotes, etc.)
+   */
+  /**
+   * Overrides styling from system.theme.
+   */
+  /* Link actions. */
+  /**
+   * Style a clickable/tappable element as a link. Duplicates the base style for
+   * the <a> tag, plus a reset for padding, borders and background.
+   */
+  /**
+   * We've temporarily added the danger button here, bit of a harsh reset but we
+   * need it.
+   * @todo replace with link--danger.
+   * See https://www.drupal.org/node/2123731
+   */
+  /* Override clf's default blockquote and pre styles when captioned. */
+}
+.ck-content html {
+  font-size: 10px;
+}
+.ck-content body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+.ck-content h1,
+.ck-content h2,
+.ck-content h3,
+.ck-content h4,
+.ck-content h5,
+.ck-content h6 {
+  color: #005554;
+  text-rendering: auto;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.ck-content h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.ck-content h2 {
+  margin-top: 2.2rem;
+  margin-bottom: 1.1rem;
+}
+.ck-content h3,
+.ck-content h4,
+.ck-content h5,
+.ck-content h6 {
+  margin-top: 1.65rem;
+  margin-bottom: 1.1rem;
+}
+.ck-content h1 {
+  font-size: 2.585rem;
+}
+.ck-content h2 {
+  font-size: 1.936rem;
+}
+.ck-content h3 {
+  font-size: 1.617rem;
+}
+.ck-content h4 {
+  font-size: 1.287rem;
+}
+.ck-content h3,
+.ck-content h4 {
+  font-weight: 700;
+}
+.ck-content p {
+  line-height: 1.5;
+  margin-top: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+.ck-content a {
+  color: #00afa4;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  transition: color 0.5s ease-in;
+}
+.ck-content a:hover,
+.ck-content a:active {
+  color: #005554;
+}
+.ck-content hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  margin: 3rem auto;
+  width: 40%;
+  padding: 0;
+  background-color: #9e4225;
+  clear: both;
+}
+.ck-content blockquote {
+  border-left: 8px solid #00afa4;
+  list-style-position: inside;
+  margin-left: 0;
+  padding-left: 1em;
+  padding-right: 2em;
+}
+.ck-content :not(pre) > code {
+  padding: 0.2em 0.4em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+.ck-content :not(pre) > code,
+.ck-content pre {
+  background-color: #eee;
+}
+.ck-content pre {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+.ck-content code,
+.ck-content pre {
+  color: #555;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  -webkit-hyphens: none;
+          hyphens: none;
+}
+.ck-content pre,
+.ck-content code,
+.ck-content kbd,
+.ck-content samp {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+}
+.ck-content figure {
+  display: table;
+  margin: 2rem 0;
+}
+.ck-content figure img {
+  display: block;
+}
+.ck-content figcaption {
+  display: table-caption;
+  caption-side: bottom;
+  max-width: none;
+  padding: 1rem 2rem;
+  font-size: 0.88rem;
+  line-height: 1.2;
+}
+.ck-content figcaption p {
+  margin: 0;
+}
+.ck-content a + figcaption,
+.ck-content img + figcaption {
+  color: #9e4225;
+}
+.ck-content blockquote + figcaption {
+  color: #555;
+}
+.ck-content [tabindex="-1"]:focus {
+  outline: none;
+}
+@media print {
+  .ck-content footer {
+    display: none;
+  }
+}
+.ck-content form {
+  margin: 0;
+  padding: 0;
+}
+.ck-content button {
+  width: auto;
+  overflow: visible;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.ck-content label {
+  display: table;
+  margin: 0 0 0.25em;
+  padding: 0;
+  font-weight: bold;
+}
+.ck-content label[for] {
+  cursor: pointer;
+}
+.ck-content fieldset {
+  background-color: #f6fffe;
+  border: 2px solid #00afa4;
+  border-radius: 3px;
+  padding: 1em;
+  margin: 1em 0;
+  min-width: 100%;
+}
+.ck-content .fieldset-wrapper p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.ck-content legend {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 0 0.25em;
+}
+.ck-content select {
+  max-width: 100%;
+}
+.ck-content button,
+.ck-content input {
+  font-size: 1.1rem;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  vertical-align: baseline;
+}
+.ck-content input {
+  width: auto;
+}
+.ck-content button {
+  width: auto;
+  overflow: visible;
+}
+.ck-content button,
+.ck-content input,
+.ck-content optgroup,
+.ck-content select,
+.ck-content textarea {
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+.ck-content input,
+.ck-content select {
+  vertical-align: middle;
+}
+.ck-content input,
+.ck-content textarea,
+.ck-content select,
+.ck-content input[type=text] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid #444;
+  border-radius: 0;
+  color: #444;
+  margin: 0;
+  max-width: 100%;
+  padding: 0.5rem 0.8rem;
+}
+.ck-content input:focus,
+.ck-content textarea:focus,
+.ck-content select:focus,
+.ck-content input[type=text]:focus {
+  outline: 0.2rem solid rgba(82, 168, 236, 0.8);
+  transition: outline ease-in-out 0.2s;
+}
+.ck-content input[type=image] {
+  border: 0;
+}
+.ck-content button:hover,
+.ck-content input[type=image]:hover,
+.ck-content input[type=button]:hover,
+.ck-content input[type=submit]:hover {
+  cursor: pointer;
+}
+.ck-content select {
+  background: #fff url("../img/arrow-both.svg") no-repeat right 1.3rem center;
+  background-size: 1rem;
+  padding-right: 3rem;
+}
+.ck-content select[multiple] {
+  background-image: none;
+}
+.ck-content input[type=checkbox],
+.ck-content input[type=radio] {
+  padding: 0;
+  display: inline-block;
+}
+.ck-content [type=checkbox],
+.ck-content [type=radio] {
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+  border: 0;
+  vertical-align: middle;
+}
+.ck-content [type=checkbox]:focus,
+.ck-content [type=radio]:focus {
+  outline: none;
+}
+.ck-content [type=checkbox] + label,
+.ck-content [type=radio] + label {
+  font-weight: 400;
+  margin-left: 0.6rem;
+}
+.ck-content [type=checkbox]::before,
+.ck-content [type=radio]::before {
+  background-color: #fff;
+  content: " ";
+  display: inline-block;
+  text-indent: 0.15em;
+  vertical-align: middle;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.ck-content [type=checkbox]::before {
+  border-radius: 0.2rem;
+  box-shadow: 0 0 0 0.2rem #444;
+  height: 2rem;
+  line-height: 2rem;
+  margin-left: 1px;
+  margin-right: 0.6em;
+  width: 2rem;
+}
+.ck-content [type=radio]::before {
+  border-radius: 100%;
+  box-shadow: 0 0 0 0.2rem #ffffff, 0 0 0 0.4rem #444;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  margin-left: 3px;
+  margin-right: 0.75em;
+  width: 1.4rem;
+}
+.ck-content [type=checkbox]:checked::before,
+.ck-content [type=radio]:checked::before {
+  background-color: #00afa4;
+  box-shadow: 0 0 0 0.2rem #00afa4;
+}
+.ck-content [type=radio]:checked::before {
+  box-shadow: 0 0 0 0.2rem #fff, 0 0 0 0.4rem #00afa4;
+}
+.ck-content [type=checkbox]:checked::before,
+.ck-content [type=checkbox]:checked:disabled::before {
+  background-image: url("../img/correct8.svg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+.ck-content [type=radio]:focus::before {
+  outline: 0.2rem solid rgba(82, 168, 236, 0.8);
+  outline-offset: 6px;
+}
+.ck-content [type=checkbox]:disabled + label {
+  color: #d6d7d9;
+}
+.ck-content [type=checkbox]:focus::before {
+  outline: 0.2rem solid rgba(82, 168, 236, 0.8);
+  outline-offset: 3px;
+}
+.ck-content [type=checkbox]:disabled::before,
+.ck-content [type=radio]:disabled::before {
+  background: #f1f1f1;
+  box-shadow: 0 0 0 0.2rem #999;
+  cursor: not-allowed;
+}
+.ck-content img {
+  max-width: 100%;
+  height: auto;
+}
+.ck-content ul,
+.ck-content ol {
+  margin-top: 0;
+  margin-bottom: 1.1rem;
+  margin-left: 0;
+  padding-left: 2.2rem;
+}
+.ck-content li {
+  line-height: 1.5;
+}
+.ck-content table,
+.ck-content tbody,
+.ck-content td,
+.ck-content tfoot,
+.ck-content th,
+.ck-content thead,
+.ck-content tr {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.ck-content table {
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+.ck-content caption,
+.ck-content th {
+  text-align: left;
+}
+.ck-content th,
+.ck-content td {
+  padding: 1rem;
+  border: 0 solid #d7e0e7;
+}
+.ck-content th {
+  vertical-align: bottom;
+  border-bottom-width: 2px;
+}
+.ck-content td {
+  vertical-align: top;
+  border-bottom-width: 1px;
+}
+.ck-content th :first-child,
+.ck-content td :first-child {
+  margin-top: 0;
+}
+.ck-content th :last-child,
+.ck-content td :last-child {
+  margin-bottom: 0;
+}
+.ck-content .text-align-left {
+  text-align: left;
+}
+.ck-content .text-align-right {
+  text-align: right;
+}
+.ck-content .text-align-center {
+  text-align: center;
+}
+.ck-content .text-align-justify {
+  text-align: justify;
+}
+.ck-content .align-left {
+  float: left;
+}
+.ck-content .align-right {
+  float: right;
+}
+.ck-content .align-center {
+  margin-right: auto;
+  margin-left: auto;
+}
+.ck-content .image--left,
+.ck-content .image--right,
+.ck-content .image--center {
+  clear: both;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.ck-content .align-left,
+.ck-content .image--left {
+  float: left;
+  margin-right: 2rem;
+}
+.ck-content .align-right,
+.ck-content .image--right {
+  float: right;
+  margin-left: 2rem;
+}
+.ck-content .align-center,
+.ck-content .image--center {
+  margin-right: auto;
+  margin-left: auto;
+}
+.ck-content .button,
+.ck-content .image-button {
+  margin-left: 0;
+  margin-right: 0;
+}
+.ck-content .read-more__link, .ck-content .button {
+  display: inline-block;
+  padding: 0.7rem 1.7rem;
+  border: 0;
+  border-radius: 0.2rem;
+  background: none;
+  text-decoration: none;
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  outline-offset: 2px;
+}
+.ck-content .button--hover.read-more__link, .ck-content .button--hover.button, .ck-content .button--focus.read-more__link, .ck-content .button--focus.button, .ck-content .read-more__link:hover, .ck-content .button:hover, .ck-content .read-more__link:focus, .ck-content .button:focus {
+  text-decoration: none;
+  outline: none;
+}
+.ck-content .button--focus.read-more__link, .ck-content .button--focus.button, .ck-content .read-more__link:focus, .ck-content .button:focus {
+  z-index: 10;
+  outline: 1px dotted #00afa4;
+}
+.ck-content .button--active.read-more__link, .ck-content .button--active.button, .ck-content .read-more__link:active, .ck-content .button:active {
+  transition: none;
+}
+.ck-content .field-add-more-submit.button {
+  font-size: 0.8em;
+}
+.ck-content .button.form-submit,
+.ck-content .button--primary {
+  border-color: #00afa4;
+  background-color: #00afa4;
+  color: #fff;
+}
+.ck-content .button.form-submit.button--hover, .ck-content .button.form-submit:hover,
+.ck-content .button--hover.button--primary,
+.ck-content .button--primary:hover {
+  background-color: #007c74;
+  color: #fff;
+  box-shadow: 0 1px 2px hsla(203deg, 10%, 10%, 0.25);
+}
+.ck-content .button.form-submit.button--active, .ck-content .button.form-submit:active,
+.ck-content .button--active.button--primary,
+.ck-content .button--primary:active {
+  background-color: #005554;
+  box-shadow: inset 0 1px 3px hsla(0deg, 0%, 0%, 0.2);
+}
+.ck-content .button--secondary {
+  border-color: #005554;
+  background-color: #005554;
+  color: #fff;
+}
+.ck-content .button--focus.button--secondary, .ck-content .button--hover.button--secondary, .ck-content .button--secondary:hover, .ck-content .button--secondary:focus {
+  background-color: #005554;
+  border-color: #005554;
+  color: #fff;
+}
+.ck-content .button--hover.button--secondary, .ck-content .button--secondary:hover {
+  background-color: #007c74;
+  box-shadow: 0 1px 2px hsla(203deg, 10%, 10%, 0.25);
+}
+.ck-content .button--active.button--secondary, .ck-content .button--secondary:active {
+  background-color: #003c3b;
+  box-shadow: inset 0 1px 3px hsla(0deg, 0%, 0%, 0.2);
+}
+.ck-content .button-action::before {
+  margin-left: -0.2em;
+  padding-right: 0.2em;
+  font-size: 0.875rem;
+  line-height: 16px;
+}
+.ck-content [dir=rtl] .button-action::before {
+  margin-right: -0.2em;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0.2em;
+}
+.ck-content .link {
+  display: inline;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-decoration: none;
+  color: #00afa4;
+}
+.ck-content .link:hover, .ck-content .link:active {
+  text-decoration: underline;
+  color: #005554;
+}
+.ck-content .button--danger {
+  display: inline;
+  cursor: pointer;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: none;
+  color: #c72100;
+  text-decoration: underline;
+}
+.ck-content .button--danger.button--focus, .ck-content .button--danger.button--hover, .ck-content .button--danger.button--active, .ck-content .button--danger:hover, .ck-content .button--danger:focus, .ck-content .button--danger:active {
+  color: #ff2a00;
+  text-decoration: underline;
+  text-shadow: none;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: none;
+}
+.ck-content .button--danger:disabled, .ck-content .button--danger.is-disabled {
+  color: #737373;
+  cursor: default;
+  text-decoration: none;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+  background: none;
+}
+.ck-content .read-more__link,
+.ck-content .button--outline {
+  color: #00afa4;
+  box-shadow: inset 0 0 0 2px #00afa4;
+}
+.ck-content .button--hover.read-more__link, .ck-content .read-more__link:hover,
+.ck-content .button--outline.button--hover,
+.ck-content .button--outline:hover {
+  box-shadow: inset 0 0 0 2px #007c74;
+  color: #007c74;
+}
+.ck-content .button--active.read-more__link, .ck-content .read-more__link:active,
+.ck-content .button--outline.button--active,
+.ck-content .button--outline:active {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #005554;
+  box-shadow: inset 0 0 0 2px #005554;
+}
+.ck-content .button--inverse {
+  color: #fff;
+  box-shadow: inset 0 0 0 2px #fff;
+}
+.ck-content .button--inverse.button--hover, .ck-content .button--inverse.button--active, .ck-content .button--inverse:hover, .ck-content .button--inverse:active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+.ck-content .button--inverse.button--active, .ck-content .button--inverse:active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.ck-content .button--large {
+  border-radius: 0.3rem;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+}
+.ck-content .read-more__link,
+.ck-content .button--small {
+  font-size: 1.5rem;
+  padding: 0.5rem 1.5rem;
+}
+.ck-content .button:disabled,
+.ck-content .button:disabled:active,
+.ck-content .button.is-disabled,
+.ck-content .button.is-disabled:active {
+  background-color: #ededed;
+  box-shadow: none;
+  color: #5c5c5c;
+  cursor: default;
+  text-shadow: 0 1px hsla(0deg, 0%, 100%, 0.6);
+}
+.ck-content .read-more {
+  margin-top: 2rem;
+}
+.ck-content .caption {
+  display: table;
+}
+.ck-content .caption > * {
+  display: block;
+  max-width: 100%;
+}
+.ck-content .caption > figcaption {
+  display: table-caption;
+  max-width: none;
+  caption-side: bottom;
+}
+.ck-content .media + figcaption {
+  background: #9e4225;
+  color: #fff;
+}
+.ck-content .caption .media .field {
+  line-height: 1;
+}
+.ck-content .caption-pre > pre,
+.ck-content .caption-blockquote > blockquote {
+  margin: 0;
+}
+.ck-content .caption-blockquote > figcaption::before {
+  content: "— ";
+}
+.ck-content .caption-blockquote > figcaption {
+  text-align: left;
+}
+.ck-content [dir=rtl] .caption-blockquote > figcaption {
+  text-align: right;
+}
+.ck-content details {
+  padding: 0.5rem 0;
+  border: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.ck-content details > .node__content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.ck-content .details--small {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0;
+}
+.ck-content .details--small summary {
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+.ck-content details > .details-wrapper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.ck-content .details-wrapper {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.ck-content .details-wrapper > :last-child {
+  margin-bottom: 1rem;
+}
+.ck-content details > summary {
+  list-style: none;
+}
+.ck-content details > summary::-webkit-details-marker {
+  display: none;
+}
+.ck-content details summary {
+  font-size: 2rem;
+  background-repeat: no-repeat;
+  background-position: right 1rem top 50%;
+  background-size: 1.7rem 1.7rem;
+  color: #00afa4;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M53 29H35V11a3 3 0 00-6 0v18H11a3 3 0 000 6h18v18a3 3 0 006 0V35h18a3 3 0 000-6z' fill='%2300afa4'/%3E%3C/svg%3E");
+  border-bottom: 1px solid #005554;
+  padding-right: 3rem;
+  padding-left: 1rem;
+}
+.ck-content details[open] summary {
+  border-bottom-width: 3px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M53 34H11a3 3 0 010-6h42a3 3 0 010 6z' fill='%2300afa4'/%3E%3C/svg%3E");
+}
+@media (max-width: 767.98px) {
+  .ck-content details summary {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.ck-content .node__header_image img {
+  width: 100%;
+  height: auto;
+}
+.ck-content .inline-block-left,
+.ck-content .inline-block-right {
+  margin: 0 0 1rem 0;
+  padding: 2rem;
+  background-color: #005554;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .ck-content .inline-block-left,
+  .ck-content .inline-block-right {
+    max-width: 260px;
+    width: 100%;
+  }
+}
+.ck-content .inline-block-left h2,
+.ck-content .inline-block-left h3,
+.ck-content .inline-block-left h4,
+.ck-content .inline-block-left a,
+.ck-content .inline-block-right h2,
+.ck-content .inline-block-right h3,
+.ck-content .inline-block-right h4,
+.ck-content .inline-block-right a {
+  color: #fff;
+}
+.ck-content .inline-block-left h2,
+.ck-content .inline-block-left h3,
+.ck-content .inline-block-left h4,
+.ck-content .inline-block-right h2,
+.ck-content .inline-block-right h3,
+.ck-content .inline-block-right h4 {
+  margin-top: 0;
+}
+.ck-content .inline-block-left {
+  margin-right: 2rem;
+}
+@media (min-width: 768px) {
+  .ck-content .inline-block-left {
+    float: left;
+    clear: left;
+  }
+}
+.ck-content .inline-block-right {
+  margin-left: 2rem;
+}
+@media (min-width: 768px) {
+  .ck-content .inline-block-right {
+    float: right;
+    clear: right;
+  }
+}
+.ck-content .media--type-logo {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 2rem;
+}
+.ck-content .media--type-logo div {
+  line-height: 0;
+}
+.ck-content .media--type-logo img {
+  object-fit: contain;
+}
+.ck-content .media--type-logo:first-of-type {
+  padding-left: 0;
+}
+.ck-content .node table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #d7e0e7;
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
+.ck-content .node td,
+.ck-content .node th {
+  border: 0 solid #d7e0e7;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  padding: 0.5rem 0.8rem;
+  text-align: left;
+}
+.ck-content .node thead th {
+  vertical-align: bottom;
+}
+.ck-content td.is-active {
+  background-color: transparent;
+}
+.ck-content .text-primary {
+  color: #9e4225;
+}
+.ck-content .text-secondary {
+  color: #005554;
+}
+.ck-content .text-large {
+  font-size: 2.2rem;
+}
+.ck-content .intro {
+  color: #cc6e20;
+  font-size: 2.2rem;
+}
+.ck-content .image:not([class*=image-style-align-]) {
+  margin: 2rem 0;
+}

@@ -1,0 +1,29 @@
+@import '../variables';
+@import '../bootstrap-no-output';
+
+.landing-intro {
+  max-width: 90rem;
+  width: 90%;
+  margin: 2rem auto;
+  text-align: center;
+
+  p {
+    font-style: italic;
+    font-size: 1.8rem;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 2.2rem;
+    }
+  }
+
+  // Disable divider.card-wrapper
+  //&::after {
+  //  width: 50%;
+  //  max-width: 220px;
+  //  height: 3px;
+  //  background-color: $burnt-sienna;
+  //  margin: 0 auto;
+  //  content: '';
+  //  display: inline-block;
+  //}
+}

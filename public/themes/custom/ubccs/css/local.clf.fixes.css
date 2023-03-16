@@ -1,0 +1,114 @@
+/**
+ * $file
+ * To fix inconsistencies with the locally-hosted CLF CSS
+ */
+footer {
+  background-color: inherit;
+}
+
+#ubc7-unit-social-icons i {
+  color: #fff;
+  background-color: #9e4225;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 32px;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+}
+
+#ubc7-unit-menu {
+  width: 100%;
+  margin: 0;
+}
+
+#ubc7-unit-social-icons span.ext {
+  display: none;
+}
+
+#ubc7-global-footer,
+#ubc7-global-menu,
+#ubc7-minimal-footer,
+#ubc7-unit,
+input,
+button {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#ubc7-search-box input {
+  font-size: inherit !important;
+}
+
+.btn,
+.btn:focus,
+.btn:hover,
+.btn:active {
+  box-shadow: none;
+  border: 0;
+  color: #00afa4;
+  background-color: transparent;
+  line-height: inherit;
+  font-size: inherit;
+}
+
+input,
+textarea,
+.uneditable-input {
+  width: inherit;
+}
+
+input[type=text] {
+  height: auto;
+  line-height: inherit;
+}
+
+#ubc7-header {
+  box-sizing: content-box;
+}
+
+/* Remove the inset shadows and text shadows from the unit area */
+#ubc7-unit {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+#ubc7-unit-name a,
+#ubc7-unit-name a:hover {
+  text-shadow: none;
+}
+
+ul.primary.tabs,
+ul.secondary.tabs {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#ubc7-unit-menu .container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+@media (min-width: 980px) and (max-width: 1499.98px) {
+  #ubc7-wordmark {
+    width: 100% !important;
+    border-right: #fff solid 100px;
+  }
+}
+#ubc7-global-utility button {
+  position: absolute;
+  right: 0;
+}
+
+.ubc7-arrow.up-arrow.white {
+  background-position: -1207px -225px;
+}
+
+#ubc7-global-footer {
+  font-size: 14px;
+}
+
+.unit-footer-column {
+  margin-bottom: 2rem;
+}

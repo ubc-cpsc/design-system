@@ -1,0 +1,36 @@
+/**
+ * $file
+ * Approximate clf's style in CKEditor instances on the Drupal back-end.
+ */
+
+@import 'variables';
+
+.ck-content {
+  // Override to fix rem issue in CKEditor 5 in Claro.
+  $font-size-base: 1.1rem;
+
+  @import 'base/typography';
+  @import 'base/blockquote';
+  @import 'base/code';
+  @import 'base/figure';
+  @import 'base/fixes';
+  @import 'base/form';
+  @import 'base/image';
+  @import 'base/list';
+  @import 'base/table';
+
+  @import 'components/align';
+  @import 'components/button';
+  @import 'components/caption';
+  @import 'components/details';
+  @import 'components/image';
+  @import 'components/inline-block';
+  @import 'components/media';
+  @import 'components/table';
+  @import 'components/typography';
+
+  // Fix ckeditor5 display, margin: auto.
+  .image:not([class*="image-style-align-"]) {
+    margin: 2rem 0;
+  }
+}

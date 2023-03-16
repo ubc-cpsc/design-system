@@ -1,0 +1,59 @@
+{% extends "node.html.twig" %}
+ {% block header %}
+     <header class="profile-alumni__header">
+       {% if content.field_header_image %}
+         {{ content.field_header_image }}
+       {% endif %}
+
+       {{ title_prefix }}
+       {% if page %}
+         <h1{{ title_attributes.addClass('page-title') }}>
+           {{ label }}
+         </h1>
+       {% else %}
+         <h2{{ title_attributes }}>
+           <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+         </h2>
+       {% endif %}
+       {{ title_suffix }}
+
+       {% if content.field_subtitle|render %}
+         <div class="profile-alumni__intro">
+           <p class="intro">{{ content.field_subtitle }}</p>
+         </div>
+       {% endif %}
+
+       {% if display_submitted and page %}
+         <footer class="node__meta">
+           <div{{ author_attributes.addClass('node__submitted') }}>
+             Posted on: {{ node.getCreatedTime()|format_date('custom', 'F j, Y') }}
+             {{ metadata }}
+           </div>
+         </footer>
+       {% endif %}
+
+     </header>
+
+ {% endblock %}
+
+{% block node_content %}
+
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ content|without('links', 'field_subtitle', 'field_node_image_vertical') }}
+  </div>
+
+
+  {% if content.field_node_image_vertical %}
+    <div class="profile-alumni-image">
+      <figure class="profile-image">
+        {{ content.field_node_image_vertical }}
+      </figure>
+    </div>
+  {% endif %}
+
+
+{% endblock %}
+
+{% block node_meta %}
+{# Moved to header block. #}
+{% endblock %}

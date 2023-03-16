@@ -1,0 +1,44 @@
+@import '../variables';
+@import '../bootstrap-no-output';
+
+// CLF overrides.
+#ubc7-unit-menu .dropdown .btn-group:hover button,
+#ubc7-unit-menu .dropdown .btn-group button {
+  height: 45px !important;
+}
+
+#ubc7-unit .navbar .btn-navbar:active,
+#ubc7-unit .navbar .btn-navbar:hover {
+  box-shadow: none;
+}
+
+#ubc7-unit-navigation .sub-menu--main li a {
+  color: $teal;
+}
+
+
+#ubc7-unit .navbar .btn-navbar,
+#ubc7-unit .btn {
+  box-shadow: none;
+  width: auto;
+  padding: 1.2rem;
+  margin: 0;
+  background: transparent;
+
+  font-size: 1.7rem;
+
+  height: 100%;
+}
+
+@include media-breakpoint-up(lg) {
+  // Hide mobile main menu.
+  #ubc7-unit-navigation .sub-menu--main {
+    display: none;
+  }
+}
+@include media-breakpoint-down(md) {
+  // Hide desktop main menu.
+  #ubc7-unit-navigation .menu--main {
+    display: none;
+  }
+}

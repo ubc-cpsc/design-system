@@ -1,0 +1,119 @@
+
+.sub-menu h3 {
+  font-weight: normal;
+}
+
+.sub-menu {
+  // Push off the top same as the h1.
+  margin-top: 2.7rem;
+}
+
+.sub-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sub-menu .menu-item--expanded .menu-item__label {
+  display: flex;
+
+  & > .menu-item__link {
+    flex: 1 1 auto;
+  }
+  & > .menu-item__toggle {
+    flex: 0 0 1rem;
+  }
+}
+
+.sub-menu .menu-item__link {
+  text-decoration: none;
+  display: block;
+
+  padding: .5rem .85rem;
+
+  transition: all .25s ease-in;
+
+  &.is-active {
+    color: $dark-teal;
+
+    // Not bold to reduce the text-width jump, may need to be normal.
+    font-weight: 400;
+
+    position: relative;
+
+    &::before {
+      width: 50px;
+      height: 2px;
+
+      background-color: $dark-teal;
+      position: absolute;
+      bottom: 0;
+      content: '';
+    }
+  }
+}
+
+.sub-menu .menu-item__label {
+  border-bottom: 1px solid lighten(desaturate($dark-teal, 50%), 75%);
+}
+
+.sub-menu .menu-item--active-trail > .menu-item__label .menu-item__link {
+  color: $dark-teal;
+
+  // Not bold to reduce the text-width jump, may need to be normal.
+  font-weight: 400;
+}
+
+// Indentation of sub links.
+.sub-menu ul .menu-item__link {
+  padding-left: 1rem;
+}
+
+.sub-menu ul ul .menu-item__link {
+  padding-left: 2rem;
+}
+
+.sub-menu ul ul ul .menu-item__link {
+  padding-left: 3rem;
+}
+
+.sub-menu ul ul ul ul .menu-item__link {
+  padding-left: 4rem;
+}
+
+.sub-menu ul ul ul ul ul .menu-item__link {
+  padding-left: 5rem;
+}
+
+.sub-menu ul ul ul ul ul ul .menu-item__link {
+  padding-left: 6rem;
+}
+
+.menu-item__item {
+  margin: 0;
+}
+
+// Toggle.
+.menu-item__item > ul {
+  display: none;
+}
+.menu-item__item.menu-item--expand > ul {
+  display: block;
+}
+
+.sub-menu .menu-item__toggle {
+  text-align: center;
+  min-width: 3rem;
+  cursor: pointer;
+}
+
+.menu-item__toggle .chevron::after {
+  transition: transform .5s ease-in-out;
+}
+.menu-item__item.menu-item--expand > .menu-item__label .chevron::after {
+  transform: rotate(135deg);
+}
+
+.menu-item--active-trail > .menu-item__label .chevron::after {
+  border-color: $dark-teal;
+}

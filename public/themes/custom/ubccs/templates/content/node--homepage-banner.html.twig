@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ */
+#}
+<div class="home-banner">
+{% if node.field_home_banner_learn_more.uri %}
+  <a href="{{ node.field_home_banner_learn_more.uri }}">
+    {% if content.field_home_banner_img %}
+      <div class="home-banner__image">
+        {{ content.field_home_banner_img }}
+      </div>
+    {% endif %}
+    {% if content.field_home_banner_head %}
+      <div class="home-banner__title">
+        {{ content.field_home_banner_head }}
+        {{ content.body }}
+      </div>
+  {% endif %}
+  </a>
+{% else %}
+  {% if content.field_home_banner_img %}
+    <div class="home-banner__image">
+      {{ content.field_home_banner_img }}
+    </div>
+  {% endif %}
+  {% if content.field_home_banner_head %}
+    <div class="home-banner__title">
+      {{ content.field_home_banner_head }}
+      {{ content.body }}
+    </div>
+  {% endif %}
+{% endif %}
+</div>

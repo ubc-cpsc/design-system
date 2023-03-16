@@ -1,0 +1,38 @@
+@import '../variables';
+
+.breadcrumb {
+  padding: .5rem;
+
+  line-height: 1.5rem;
+
+  color: $gray-light;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.breadcrumb li {
+  line-height: 1.5rem;
+}
+
+.breadcrumb li::before {
+  content: '/';
+  display: inline-block;
+  margin: 0 .5em 0;
+  color: $gray-light;
+}
+
+.breadcrumb li:first-child:before {
+  content: none;
+}
+
+// Override CLF.
+.breadcrumb a {
+  color: $teal;
+}
+
+// Override CLF.
+.breadcrumb .active {
+  color: $gray-light;
+}

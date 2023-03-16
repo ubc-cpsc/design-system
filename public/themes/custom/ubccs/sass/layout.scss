@@ -1,0 +1,76 @@
+@import 'variables';
+@import 'bootstrap-no-output';
+
+.layout-wrapper {
+  // Bottom spacing (could get us into trouble if you want things flush.
+  padding-bottom: 2rem;
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+
+    .layout-sidebar-first,
+    .layout-sidebar-second {
+      flex-grow: 0;
+      flex-basis: 260px;
+      max-width: 260px;
+    }
+
+    .layout-sidebar-first {
+      margin-right: 3%;
+    }
+
+    .layout-sidebar-second {
+      margin-left: 3%;
+    }
+
+    // Positioning.
+    .layout-sidebar-first {
+      order: 1;
+    }
+
+    .layout-content.has-sidebar {
+      order: 2;
+    }
+
+    .layout-sidebar-second {
+      order: 3;
+    }
+  }
+
+  .layout-content {
+    flex-basis: 0;
+    flex-grow: 1;
+
+    // This can prove problematic on landing pages, let's see.
+    // Remove
+    //max-width: 760px;
+    //margin: 0 auto;
+  }
+
+  .layout-content-full-width {
+    max-width: 100%;
+
+    .field--name-body {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+  }
+}
+
+// Divider at bottom of all pages to avoid editor from manually adding it in
+// content.
+.layout-content.has-sidebar::after {
+  display: block;
+  content: '';
+  height: 2px;
+  border: 0;
+  margin: 3rem auto;
+  width: 40%;
+  padding: 0;
+  background-color: $burnt-sienna;
+  clear: both;
+}
+
+.full-width-container {
+  background-color: #fff;
+}

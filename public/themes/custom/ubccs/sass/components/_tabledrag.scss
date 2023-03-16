@@ -1,0 +1,32 @@
+.field-multiple-table {
+  width: 100%;
+  th {
+    text-align: left;
+  }
+}
+
+button.link.tabledrag-toggle-weight {
+  font-size: .7em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+form .field-multiple-table .field-multiple-drag .tabledrag-handle {
+  padding: 7px;
+}
+.field-multiple-drag {
+  vertical-align: middle;
+}
+.draggable a.tabledrag-handle {
+  float: none;
+  display: inline-block;
+  margin: 0;
+  height: 30px;
+}
+a.tabledrag-handle .handle {
+  width: 16px;
+  height: 16px;
+  background-position: 0 0;
+  padding: 0;
+  margin: 0;
+}

@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    view_mode != 'full' and node.isPromoted() ? 'node--promoted',
+    view_mode != 'full' and node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+  {% block header %}
+    <header>
+      {{ title_prefix }}
+        <h3{{ title_attributes }}>
+          <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+        </h3>
+      {{ title_suffix }}
+    </header>
+  {% endblock %}
+
+  {% block node_content %}
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ content|without('body', 'field_event', 'field_speaker_affiliation') }}
+  </div>
+  {% endblock %}
+</article>

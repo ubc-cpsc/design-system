@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Theme override to display a node teaser.
+ */
+#}
+{% extends "node.html.twig" %}
+{% block header %}
+  {{ title_prefix }}
+  {{ title_suffix }}
+{% endblock %}
+{% block node_content %}
+  <div class="news--teaser">
+    <div class="news--teaser__image">
+    {% if content.field_thumbnail|render %}
+      {{ content.field_thumbnail }}
+    {% else %}
+      {{ content.field_header_image }}
+    {% endif %}
+    </div>
+    <div class="news--teaser__text">
+      <h4 class="news--teaser__header"><a href="{{ url }}" rel="bookmark">{{ label }}</a></h4>
+      <div class="news--teaser__date"><time datetime="{{ node.getCreatedTime()|date('Y-m-d\\TH:i:s\\Z') }}">{{ node.getCreatedTime()|format_date('month_day_year') }}</time></div>
+      <div class="news--teaser__summary">{{ content.body }}</div>
+    </div>
+  </div>
+{% endblock %}

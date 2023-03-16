@@ -1,0 +1,11 @@
+@import '../variables';
+// Divider between landing cards and anything after (typically body field).
+.landing-cards + .field::before {
+  width: 50%;
+  max-width: 220px;
+  height: 3px;
+  background-color: $burnt-sienna;
+  margin: 3rem auto 0;
+  content: '';
+  display: block;
+}

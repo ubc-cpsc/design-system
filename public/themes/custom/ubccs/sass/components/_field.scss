@@ -1,0 +1,41 @@
+.field--label-inline .field__label,
+.field--label-inline .field__items {
+  // Override core.
+  float: none;
+  display: inline-block;
+}
+
+.field--label-inline {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.field--label-inline .field__item {
+  vertical-align: top;
+}
+
+.field--label-inline .field__label,
+.field--label-inline > .field__item {
+  padding-right: 0.5rem;
+}
+
+.field + .field {
+  margin-top: 1rem;
+}
+
+.field--label-inline .field + .field {
+  margin-top: 0;
+}
+
+// Generally fields are following a clearfix class so remove the excess
+// whitespace.
+.field__label h2 {
+  margin-top: 1.7rem;
+}
+
+.field--name-field-tags .field__items {
+  display: flex;
+  .field__item {
+    margin: 0 5px;
+  }
+}

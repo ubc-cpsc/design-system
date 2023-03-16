@@ -1,0 +1,101 @@
+@import '../variables';
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: $font-family;
+  color: $gray-dark;
+
+  // Override CLF.
+  font-size: $font-size-base;
+
+  // Fix absolute line-height from CLF.
+  line-height: 1.5;
+}
+
+// Heading general.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $dark-teal;
+
+  text-rendering: auto;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+// Heading spacing.
+h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h2 {
+  margin-top: $font-size-base * 2;
+  margin-bottom: $font-size-base;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  margin-top: $font-size-base * 1.5;
+  margin-bottom: $font-size-base;
+}
+
+// Heading sizes.
+h1 {
+  font-size: $font-size-base * 2.35;
+}
+h2 {
+  font-size: $font-size-base * 1.76;
+}
+h3 {
+  font-size: $font-size-base * 1.47;
+}
+h4 {
+  font-size: $font-size-base * 1.17;
+}
+
+// Heading weights.
+h3,
+h4 {
+  font-weight: 700;
+}
+
+// Paragraphs.
+p {
+  line-height: 1.5;
+  margin-top: $font-size-base;
+  margin-bottom: $font-size-base;
+}
+
+// Links.
+a {
+  color: $teal;
+  text-decoration-skip-ink: auto;
+  transition: color 0.5s ease-in;
+}
+
+a:hover,
+a:active {
+  color: $dark-teal;
+}
+
+hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  margin: 3rem auto;
+  width: 40%;
+  padding: 0;
+  background-color: $burnt-sienna;
+
+  // Prevent floating on left and right.
+  clear: both;
+}
