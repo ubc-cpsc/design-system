@@ -167,7 +167,8 @@
 }
 .ck-content a + figcaption,
 .ck-content img + figcaption {
-  color: #9e4225;
+  background: #9e4225;
+  color: #fff;
 }
 .ck-content blockquote + figcaption {
   color: #555;

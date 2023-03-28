@@ -30,10 +30,8 @@ figcaption p {
 // Image captions.
 a + figcaption,
 img + figcaption {
-  color: $burnt-sienna;
-  // Temporary fix for AC 6542-106.
-  //background: $burnt-sienna;
-  //color: #fff;
+  background: $burnt-sienna;
+  color: #fff;
 }
 
 // Blockquote captions.
