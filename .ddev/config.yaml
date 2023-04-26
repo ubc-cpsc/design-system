@@ -1,4 +1,4 @@
-name: cs-ia
+name: design-system
 type: php
 docroot: public
 php_version: "8.2"
@@ -14,7 +14,6 @@ database:
 nfs_mount_enabled: false
 mutagen_enabled: false
 webimage_extra_packages: [php-bcmath, php-intl, php-ldap, php-soap, php-zip]
-project_tld: test
 use_dns_when_possible: true
 timezone: America/Vancouver
 composer_version: "2"

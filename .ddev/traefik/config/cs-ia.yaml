@@ -1,0 +1,86 @@
+#ddev-generated
+
+http:
+  routers:
+    
+    
+    cs-ia-web-80-http:
+      
+      rule: HostRegexp(`cs-ia.test`)
+      
+      service: "cs-ia-web-80-http"
+      tls: false
+      entrypoints:
+        - http-80
+    
+    
+    cs-ia-web-8025-http:
+      
+      rule: HostRegexp(`cs-ia.test`)
+      
+      service: "cs-ia-web-8025-http"
+      tls: false
+      entrypoints:
+        - http-8025
+    
+    
+    
+    
+    
+    
+    cs-ia-web-80-https:
+      
+      rule: HostRegexp(`cs-ia.test`)
+      
+      service: "cs-ia-web-80-https"
+      
+      tls: true
+      
+      entrypoints:
+        - http-443
+    
+    
+    cs-ia-web-8025-https:
+      
+      rule: HostRegexp(`cs-ia.test`)
+      
+      service: "cs-ia-web-8025-https"
+      
+      tls: true
+      
+      entrypoints:
+        - http-8026
+    
+    
+
+  services:
+    
+    cs-ia-web-80-http:
+      loadbalancer:
+        servers:
+          - url: http://ddev-cs-ia-web:80
+    
+    cs-ia-web-8025-http:
+      loadbalancer:
+        servers:
+          - url: http://ddev-cs-ia-web:8025
+    
+    cs-ia-web-80-https:
+    
+      loadbalancer:
+        servers:
+          - url: http://ddev-cs-ia-web:80
+    
+    cs-ia-web-8025-https:
+    
+      loadbalancer:
+        servers:
+          - url: http://ddev-cs-ia-web:8025
+    
+
+
+tls:
+  certificates:
+    - certFile: /mnt/ddev-global-cache/traefik/certs/cs-ia.crt
+      keyFile: /mnt/ddev-global-cache/traefik/certs/cs-ia.key
+
