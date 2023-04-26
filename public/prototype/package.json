@@ -1,23 +1,16 @@
 {
-  "name": "ubccs",
-  "version": "1.0.0",
-  "description": "UBC CS Custom Theme",
-  "license": "MIT",
+  "private": true,
   "scripts": {
-    "sass": "node-sass --recursive --source-map true --output-style expanded --output css sass",
+    "build:sass": "sass sass:css",
     "autoprefixer": "postcss --no-map -u autoprefixer --autoprefixer.browsers -r css/*.css",
-    "build:css": "npm run sass && npm run autoprefixer",
-    "build:images": "imagemin img/* -o img",
-    "watch:css": "onchange 'sass/**/*.scss' -- npm run build:css",
-    "watch:img": "onchange 'img/**/*' -- npm run build:images",
-    "watch:all": "concurrently --kill-others 'npm run watch:css' 'npm run watch:img'"
+    "build:css": "npm run build:sass && npm run autoprefixer",
+    "watch:css": "onchange 'sass/**/*.scss' -- npm run build:css"
   },
-  "dependencies": {
-    "autoprefixer": "^9.7.3",
-    "concurrently": "^4.1.1",
-    "node-sass": "^8.0.0",
-    "onchange": "^6.0.0",
-    "postcss-cli": "^6.1.3"
+  "devDependencies": {
+    "autoprefixer": "^10.0.0",
+    "onchange": "^7.0.0",
+    "postcss-cli": "^10.0.0",
+    "sass": "^1.0.0"
   },
   "browserslist": [
     "> 1%"
