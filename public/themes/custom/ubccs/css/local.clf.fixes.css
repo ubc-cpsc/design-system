@@ -90,7 +90,7 @@ ul.secondary.tabs {
   width: 100%;
 }
 
-@media (min-width: 980px) and (max-width: 1499.98px) {
+@media (min-width: 980px) and (max-width: 1199.98px) {
   #ubc7-wordmark {
     width: 100% !important;
     border-right: #fff solid 100px;

@@ -138,8 +138,7 @@
   word-wrap: normal;
   line-height: 1.5;
   tab-size: 4;
-  -webkit-hyphens: none;
-          hyphens: none;
+  hyphens: none;
 }
 .ck-content pre,
 .ck-content code,
@@ -251,7 +250,6 @@
 .ck-content textarea,
 .ck-content select,
 .ck-content input[type=text] {
-  -webkit-appearance: none;
   appearance: none;
   border: 2px solid #444;
   border-radius: 0;
@@ -505,13 +503,13 @@
 .ck-content .button--primary:hover {
   background-color: #007c74;
   color: #fff;
-  box-shadow: 0 1px 2px hsla(203deg, 10%, 10%, 0.25);
+  box-shadow: 0 1px 2px hsla(203, 10%, 10%, 0.25);
 }
 .ck-content .button.form-submit.button--active, .ck-content .button.form-submit:active,
 .ck-content .button--active.button--primary,
 .ck-content .button--primary:active {
   background-color: #005554;
-  box-shadow: inset 0 1px 3px hsla(0deg, 0%, 0%, 0.2);
+  box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.2);
 }
 .ck-content .button--secondary {
   border-color: #005554;
@@ -525,11 +523,11 @@
 }
 .ck-content .button--hover.button--secondary, .ck-content .button--secondary:hover {
   background-color: #007c74;
-  box-shadow: 0 1px 2px hsla(203deg, 10%, 10%, 0.25);
+  box-shadow: 0 1px 2px hsla(203, 10%, 10%, 0.25);
 }
 .ck-content .button--active.button--secondary, .ck-content .button--secondary:active {
   background-color: #003c3b;
-  box-shadow: inset 0 1px 3px hsla(0deg, 0%, 0%, 0.2);
+  box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.2);
 }
 .ck-content .button-action::before {
   margin-left: -0.2em;
@@ -631,7 +629,7 @@
   box-shadow: none;
   color: #5c5c5c;
   cursor: default;
-  text-shadow: 0 1px hsla(0deg, 0%, 100%, 0.6);
+  text-shadow: 0 1px hsla(0, 0%, 100%, 0.6);
 }
 .ck-content .read-more {
   margin-top: 2rem;
@@ -719,7 +717,7 @@
   border-bottom-width: 3px;
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M53 34H11a3 3 0 010-6h42a3 3 0 010 6z' fill='%2300afa4'/%3E%3C/svg%3E");
 }
-@media (max-width: 767.98px) {
+@media (max-width: 575.98px) {
   .ck-content details summary {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -736,13 +734,6 @@
   padding: 2rem;
   background-color: #005554;
   color: #fff;
-}
-@media (min-width: 768px) {
-  .ck-content .inline-block-left,
-  .ck-content .inline-block-right {
-    max-width: 260px;
-    width: 100%;
-  }
 }
 .ck-content .inline-block-left h2,
 .ck-content .inline-block-left h3,
@@ -761,6 +752,13 @@
 .ck-content .inline-block-right h3,
 .ck-content .inline-block-right h4 {
   margin-top: 0;
+}
+@media (min-width: 768px) {
+  .ck-content .inline-block-left,
+  .ck-content .inline-block-right {
+    max-width: 260px;
+    width: 100%;
+  }
 }
 .ck-content .inline-block-left {
   margin-right: 2rem;

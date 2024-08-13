@@ -3,10 +3,6 @@
 
 .inline-block-left,
 .inline-block-right {
-  @include media-breakpoint-up(md) {
-    max-width: 260px;
-    width: 100%;
-  }
 
   margin: 0 0 1rem 0;
   padding: 2rem;
@@ -26,22 +22,27 @@
   h4 {
     margin-top: 0;
   }
+
+  @include media-breakpoint-up(md) {
+    max-width: 260px;
+    width: 100%;
+  }
 }
 
 .inline-block-left {
+  margin-right: 2rem;
+
   @include media-breakpoint-up(md) {
     float: left;
     clear: left;
   }
-
-  margin-right: 2rem;
 }
 
 .inline-block-right {
+  margin-left: 2rem;
+
   @include media-breakpoint-up(md) {
     float: right;
     clear: right;
   }
-
-  margin-left: 2rem;
 }

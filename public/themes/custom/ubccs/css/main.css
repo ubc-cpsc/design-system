@@ -138,8 +138,7 @@ pre {
   word-wrap: normal;
   line-height: 1.5;
   tab-size: 4;
-  -webkit-hyphens: none;
-          hyphens: none;
+  hyphens: none;
 }
 
 pre,
@@ -276,7 +275,6 @@ input,
 textarea,
 select,
 input[type=text] {
-  -webkit-appearance: none;
   appearance: none;
   border: 2px solid #444;
   border-radius: 0;
@@ -764,13 +762,13 @@ td :last-child {
 .button--primary:hover {
   background-color: #007c74;
   color: #fff;
-  box-shadow: 0 1px 2px hsla(203deg, 10%, 10%, 0.25);
+  box-shadow: 0 1px 2px hsla(203, 10%, 10%, 0.25);
 }
 .button.form-submit.button--active, .button.form-submit:active,
 .button--active.button--primary,
 .button--primary:active {
   background-color: #005554;
-  box-shadow: inset 0 1px 3px hsla(0deg, 0%, 0%, 0.2);
+  box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.2);
 }
 
 .button--secondary {
@@ -785,11 +783,11 @@ td :last-child {
 }
 .button--hover.button--secondary, .button--secondary:hover {
   background-color: #007c74;
-  box-shadow: 0 1px 2px hsla(203deg, 10%, 10%, 0.25);
+  box-shadow: 0 1px 2px hsla(203, 10%, 10%, 0.25);
 }
 .button--active.button--secondary, .button--secondary:active {
   background-color: #003c3b;
-  box-shadow: inset 0 1px 3px hsla(0deg, 0%, 0%, 0.2);
+  box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.2);
 }
 
 /**
@@ -914,7 +912,7 @@ td :last-child {
   box-shadow: none;
   color: #5c5c5c;
   cursor: default;
-  text-shadow: 0 1px hsla(0deg, 0%, 100%, 0.6);
+  text-shadow: 0 1px hsla(0, 0%, 100%, 0.6);
 }
 
 .read-more {
@@ -1141,13 +1139,13 @@ td :last-child {
 }
 
 /* Responsive */
-@media (max-width: 979.98px) {
+@media (max-width: 767.98px) {
   .course-section-info .views-field-field-course-days,
   .course-section-info .views-field-field-course-end-time {
     display: none;
   }
 }
-@media (max-width: 767.98px) {
+@media (max-width: 575.98px) {
   .course-section-info .views-field-field-course-term,
   .course-section-info .views-field-field-course-room,
   .course-section-info .views-field-field-course-instructors {
@@ -1215,7 +1213,7 @@ details[open] summary {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M53 34H11a3 3 0 010-6h42a3 3 0 010 6z' fill='%2300afa4'/%3E%3C/svg%3E");
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 575.98px) {
   details summary {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1314,7 +1312,7 @@ label.error {
 .form-disabled textarea.form-textarea,
 .form-disabled select.form-select {
   border-color: #d4d4d4;
-  background-color: hsla(0deg, 0%, 0%, 0.08);
+  background-color: hsla(0, 0%, 0%, 0.08);
   box-shadow: none;
 }
 
@@ -1323,7 +1321,7 @@ label.error {
 .form-item select.error {
   border-width: 1px;
   border-color: #e62600;
-  background-color: hsl(15deg, 75%, 97%);
+  background-color: hsl(15, 75%, 97%);
   box-shadow: inset 0 5px 5px -5px #b8b8b8;
   color: #a51b00;
 }
@@ -1480,7 +1478,7 @@ input[type=text]:focus {
 /**
  * Improve form element usability on narrow devices.
  */
-@media (max-width: 767.98px) {
+@media (max-width: 575.98px) {
   input.form-autocomplete,
   input.form-text,
   input.form-tel,
@@ -1892,13 +1890,6 @@ div.filter-options select {
   background-color: #005554;
   color: #fff;
 }
-@media (min-width: 768px) {
-  .inline-block-left,
-  .inline-block-right {
-    max-width: 260px;
-    width: 100%;
-  }
-}
 .inline-block-left h2,
 .inline-block-left h3,
 .inline-block-left h4,
@@ -1916,6 +1907,13 @@ div.filter-options select {
 .inline-block-right h3,
 .inline-block-right h4 {
   margin-top: 0;
+}
+@media (min-width: 768px) {
+  .inline-block-left,
+  .inline-block-right {
+    max-width: 260px;
+    width: 100%;
+  }
 }
 
 .inline-block-left {
@@ -2110,7 +2108,7 @@ div.filter-options select {
     display: none;
   }
 }
-@media (max-width: 979.98px) {
+@media (max-width: 767.98px) {
   #ubc7-unit-navigation .menu--main {
     display: none;
   }
@@ -2607,12 +2605,8 @@ div.filter-options select {
 
 .research-area__label {
   display: flex;
-}
-@media (max-width: 575.98px) {
-  .research-area__label {
-    flex-direction: column;
-    align-items: center;
-  }
+  flex-direction: column;
+  align-items: center;
 }
 
 .research-area__icon {
