@@ -3,8 +3,8 @@
   "scripts": {
     "build:sass": "sass sass:css",
     "autoprefixer": "postcss --no-map -u autoprefixer --autoprefixer.browsers -r css/*.css",
-    "build:css": "npm run build:sass && npm run autoprefixer",
-    "watch:css": "onchange 'sass/**/*.scss' -- npm run build:css"
+    "build:css": "pnpm run build:sass && pnpm run autoprefixer",
+    "watch:css": "onchange 'sass/**/*.scss' -- pnpm run build:css"
   },
   "dependencies": {
     "@fancyapps/fancybox": "github:fancyapps/fancybox",
