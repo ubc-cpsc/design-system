@@ -14,7 +14,7 @@
         "prismjs": "^1.0.0"
     },
     "devDependencies": {
-        "autoprefixer": "^10.0.0",
+        "autoprefixer": "^10.5.4",
         "onchange": "^7.0.0",
         "postcss-cli": "^11.0.0",
         "sass": "^1.0.0"
