@@ -1,5 +1,5 @@
-@import 'variables';
-@import 'bootstrap-no-output';
+@use "variables" as *;
+@import "bootstrap-no-output";
 
 .layout-wrapper {
   // Bottom spacing (could get us into trouble if you want things flush.

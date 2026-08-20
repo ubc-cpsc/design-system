@@ -1,12 +1,10 @@
-
+@use 'variables' as *;
+@forward 'variables';
 
 // These imports have no output and are safe to import.
-@import '../node_modules/bootstrap/scss/functions';
-@import '../node_modules/bootstrap/scss/variables';
-@import '../node_modules/bootstrap/scss/variables-dark';
-
-@import 'variables';
-
-@import '../node_modules/bootstrap/scss/maps';
-@import '../node_modules/bootstrap/scss/mixins';
-@import '../node_modules/bootstrap/scss/utilities';
+@import 'pkg:bootstrap/scss/functions';
+@import 'pkg:bootstrap/scss/variables';
+@import 'pkg:bootstrap/scss/variables-dark';
+@import 'pkg:bootstrap/scss/maps';
+@import 'pkg:bootstrap/scss/mixins';
+@import 'pkg:bootstrap/scss/utilities';

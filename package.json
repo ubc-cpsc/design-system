@@ -1,28 +1,32 @@
 {
     "private": true,
     "scripts": {
-        "build:sass": "sass sass:public/css",
-        "autoprefixer": "postcss --no-map -u autoprefixer --autoprefixer.browsers -r public/css/*.css",
-        "build:css": "pnpm run build:sass && pnpm run autoprefixer",
-        "watch:css": "onchange 'sass/**/*.scss' -- pnpm run build:css"
+        "build:css": "npm run build:css:theme && npm run build:css:prototype",
+        "build:css:theme": "sass --pkg-importer=node --quiet-deps --silence-deprecation=import --fatal-deprecation=color-functions --fatal-deprecation=global-builtin public/themes/custom/ubccs/sass:public/themes/custom/ubccs/css && postcss --no-map -u autoprefixer --autoprefixer.browsers -r 'public/themes/custom/ubccs/css/**/*.css'",
+        "build:css:prototype": "sass --pkg-importer=node --quiet-deps --silence-deprecation=import --fatal-deprecation=color-functions --fatal-deprecation=global-builtin public/prototype/sass:public/prototype/css && postcss --no-map -u autoprefixer --autoprefixer.browsers -r 'public/prototype/css/**/*.css'",
+        "watch:css": "onchange 'public/prototype/sass/**/*.scss' 'public/themes/custom/ubccs/sass/**/*.scss' -- npm run build:css",
+        "postinstall": "copy-files-from-to --silent"
     },
     "dependencies": {
-        "bootstrap": "^5.0.0",
+        "@fancyapps/fancybox": "github:fancyapps/fancybox",
+        "@fortawesome/fontawesome-free": "^7.3.1",
+        "bootstrap": "^5.3.8",
         "jszip": "^3.10.1",
-        "normalize.css": "^8.0.0",
+        "normalize.css": "^8.0.1",
         "prism-themes": "^1.0.0",
         "prismjs": "^1.0.0"
     },
     "devDependencies": {
         "autoprefixer": "^10.5.4",
-        "onchange": "^7.0.0",
-        "postcss-cli": "^11.0.0",
+        "copy-files-from-to": "^4.0.1",
+        "onchange": "^7.1.0",
+        "postcss-cli": "^11.0.1",
         "sass": "^1.102.0"
     },
     "copyFiles": [
         {
-            "from": "node_modules/prismjs/dist/*",
-            "to": "js/vendor/fancybox"
+            "from": "node_modules/@fancyapps/fancybox/dist/*",
+            "to": "public/themes/custom/ubccs/js/vendor/fancybox"
         }
     ],
     "copyFilesSettings": {
@@ -31,5 +35,8 @@
     "browserslist": [
         "> 1%"
     ],
-    "packageManager": "pnpm@11.22.0+sha512.1ff870c4c6133dfd88fb2afc46dd13d47f09c9794b438c6fdb47ca98caf3bc16381ee0be93a091b8e3824cf01f889f46d7d9e20910fb0be1ab0fb5baa80dd621"
+    "allowScripts": {
+        "@parcel/watcher": false,
+        "fsevents": false
+    }
 }

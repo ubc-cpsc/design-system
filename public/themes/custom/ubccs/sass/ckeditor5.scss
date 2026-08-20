@@ -1,9 +1,11 @@
+@use "variables" as *;
+@import "bootstrap-no-output";
+
 /**
  * $file
  * Approximate clf's style in CKEditor instances on the Drupal back-end.
  */
 
-@import 'variables';
 
 .ck-content {
   // Override to fix rem issue in CKEditor 5 in Claro.

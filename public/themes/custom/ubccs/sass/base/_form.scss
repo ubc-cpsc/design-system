@@ -1,4 +1,6 @@
-@import '../variables';
+@use "sass:color";
+
+@import "../bootstrap-no-output";
 
 form {
   margin: 0;
@@ -25,7 +27,7 @@ label[for] {
 
 // Fieldsets.
 fieldset {
-  background-color: lighten($teal, 64%);
+  background-color: color.adjust($teal, $lightness: 64%, $space: hsl);
   border: 2px solid $teal;
   border-radius: 3px;
 

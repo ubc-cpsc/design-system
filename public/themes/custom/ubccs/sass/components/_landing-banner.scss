@@ -1,5 +1,6 @@
-@import '../variables';
-@import '../bootstrap-no-output';
+@use "sass:color";
+
+@import "../bootstrap-no-output";
 
 .landing-banner {
   position: relative;
@@ -16,7 +17,7 @@
 
 @include media-breakpoint-up(lg) {
   .landing-banner__image {
-    background-color: darken($burnt-sienna, 20%);
+    background-color: color.adjust($burnt-sienna, $lightness: -20%, $space: hsl);
   }
 
   .field--name-field-landing-banner-image {
@@ -34,7 +35,7 @@
     left: 0;
     bottom: 0;
 
-    background: rgba(darken($burnt-sienna, 30%), 0.6);
+    background: rgba(color.adjust($burnt-sienna, $lightness: -30%, $space: hsl), 0.6);
     padding: 2rem;
   }
 

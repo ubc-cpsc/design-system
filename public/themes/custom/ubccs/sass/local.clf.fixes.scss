@@ -1,5 +1,6 @@
-@import 'variables';
-@import 'bootstrap-no-output';
+@use "sass:map";
+@use "variables" as *;
+@import "bootstrap-no-output";
 
 /**
  * $file
@@ -89,18 +90,18 @@ input[type="text"] {
 ul.primary.tabs,
 ul.secondary.tabs {
   width: 100%;
-  max-width: map_get($container-max-widths, xl);
+  max-width: map.get($container-max-widths, xl);
   margin-left: auto;
   margin-right: auto;
 }
 
 #ubc7-unit-menu .container {
-  max-width: map_get($container-max-widths, xl);
+  max-width: map.get($container-max-widths, xl);
   width: 100%;
 }
 
 .non-clf .container {
-  max-width: map_get($container-max-widths, xxl);
+  max-width: map.get($container-max-widths, xxl);
 }
 
 // Cover sprites.

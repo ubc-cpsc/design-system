@@ -1,3 +1,5 @@
+@use "sass:color";
+
 @import "../variables";
 
 // Buttons.
@@ -63,7 +65,7 @@
 
   &.button--hover,
   &:hover {
-    background-color: darken($teal, 10%);
+    background-color: color.adjust($teal, $lightness: -10%, $space: hsl);
     color: #fff;
     box-shadow: 0 1px 2px hsla(203, 10%, 10%, 0.25);
   }
@@ -95,13 +97,13 @@
 
   &.button--hover,
   &:hover {
-    background-color: darken($teal, 10%);
+    background-color: color.adjust($teal, $lightness: -10%, $space: hsl);
     box-shadow: 0 1px 2px hsla(203, 10%, 10%, 0.25);
   }
 
   &.button--active,
   &:active {
-    background-color: darken($dark-teal, 5%);
+    background-color: color.adjust($dark-teal, $lightness: -5%, $space: hsl);
     box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.2);
   }
 }
@@ -199,8 +201,8 @@
 
   &.button--hover,
   &:hover {
-    box-shadow: inset 0 0 0 2px darken($teal, 10%);
-    color: darken($teal, 10%);
+    box-shadow: inset 0 0 0 2px color.adjust($teal, $lightness: -10%, $space: hsl);
+    color: color.adjust($teal, $lightness: -10%, $space: hsl);
   }
 
   &.button--active,

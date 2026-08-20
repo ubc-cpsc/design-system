@@ -3,34 +3,6 @@
  * $file
  * Approximate clf's style in CKEditor instances on the Drupal back-end.
  */
-.ck-content {
-  /**
-   * Limits extra long instances of select elements to the max width allowed
-   * to avoid breaking layouts.
-   */
-  /**
-   * @file
-   * Alignment classes for text and block level elements.
-   */
-  /**
-   * Alignment classes for block level elements (images, videos, blockquotes, etc.)
-   */
-  /**
-   * Overrides styling from system.theme.
-   */
-  /* Link actions. */
-  /**
-   * Style a clickable/tappable element as a link. Duplicates the base style for
-   * the <a> tag, plus a reset for padding, borders and background.
-   */
-  /**
-   * We've temporarily added the danger button here, bit of a harsh reset but we
-   * need it.
-   * @todo replace with link--danger.
-   * See https://www.drupal.org/node/2123731
-   */
-  /* Override clf's default blockquote and pre styles when captioned. */
-}
 .ck-content html {
   font-size: 10px;
 }
@@ -200,7 +172,7 @@
   cursor: pointer;
 }
 .ck-content fieldset {
-  background-color: #f6fffe;
+  background-color: rgb(96.6274509804%, 100%, 99.7880112045%);
   border: 2px solid #00afa4;
   border-radius: 3px;
   padding: 1em;
@@ -216,12 +188,18 @@
   font-weight: 700;
   padding: 0 0.25em;
 }
+.ck-content {
+  /**
+   * Limits extra long instances of select elements to the max width allowed
+   * to avoid breaking layouts.
+   */
+}
 .ck-content select {
   max-width: 100%;
 }
 .ck-content button,
 .ck-content input {
-  font-size: 1.1rem;
+  font-size: 1.7rem;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   vertical-align: baseline;
 }
@@ -372,9 +350,9 @@
 .ck-content ul,
 .ck-content ol {
   margin-top: 0;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.7rem;
   margin-left: 0;
-  padding-left: 2.2rem;
+  padding-left: 3.4rem;
 }
 .ck-content li {
   line-height: 1.5;
@@ -419,6 +397,12 @@
 .ck-content td :last-child {
   margin-bottom: 0;
 }
+.ck-content {
+  /**
+   * @file
+   * Alignment classes for text and block level elements.
+   */
+}
 .ck-content .text-align-left {
   text-align: left;
 }
@@ -430,6 +414,11 @@
 }
 .ck-content .text-align-justify {
   text-align: justify;
+}
+.ck-content {
+  /**
+   * Alignment classes for block level elements (images, videos, blockquotes, etc.)
+   */
 }
 .ck-content .align-left {
   float: left;
@@ -501,7 +490,7 @@
 .ck-content .button.form-submit.button--hover, .ck-content .button.form-submit:hover,
 .ck-content .button--hover.button--primary,
 .ck-content .button--primary:hover {
-  background-color: #007c74;
+  background-color: rgb(0%, 48.6274509804%, 45.5708683473%);
   color: #fff;
   box-shadow: 0 1px 2px hsla(203, 10%, 10%, 0.25);
 }
@@ -522,12 +511,17 @@
   color: #fff;
 }
 .ck-content .button--hover.button--secondary, .ck-content .button--secondary:hover {
-  background-color: #007c74;
+  background-color: rgb(0%, 48.6274509804%, 45.5708683473%);
   box-shadow: 0 1px 2px hsla(203, 10%, 10%, 0.25);
 }
 .ck-content .button--active.button--secondary, .ck-content .button--secondary:active {
-  background-color: #003c3b;
+  background-color: rgb(0%, 23.3333333333%, 23.0588235294%);
   box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.2);
+}
+.ck-content {
+  /**
+   * Overrides styling from system.theme.
+   */
 }
 .ck-content .button-action::before {
   margin-left: -0.2em;
@@ -541,6 +535,13 @@
   padding-right: 0;
   padding-left: 0.2em;
 }
+.ck-content {
+  /* Link actions. */
+  /**
+   * Style a clickable/tappable element as a link. Duplicates the base style for
+   * the <a> tag, plus a reset for padding, borders and background.
+   */
+}
 .ck-content .link {
   display: inline;
   cursor: pointer;
@@ -553,6 +554,14 @@
 .ck-content .link:hover, .ck-content .link:active {
   text-decoration: underline;
   color: #005554;
+}
+.ck-content {
+  /**
+   * We've temporarily added the danger button here, bit of a harsh reset but we
+   * need it.
+   * @todo replace with link--danger.
+   * See https://www.drupal.org/node/2123731
+   */
 }
 .ck-content .button--danger {
   display: inline;
@@ -590,8 +599,8 @@
 .ck-content .button--hover.read-more__link, .ck-content .read-more__link:hover,
 .ck-content .button--outline.button--hover,
 .ck-content .button--outline:hover {
-  box-shadow: inset 0 0 0 2px #007c74;
-  color: #007c74;
+  box-shadow: inset 0 0 0 2px rgb(0%, 48.6274509804%, 45.5708683473%);
+  color: rgb(0%, 48.6274509804%, 45.5708683473%);
 }
 .ck-content .button--active.read-more__link, .ck-content .read-more__link:active,
 .ck-content .button--outline.button--active,
@@ -652,6 +661,9 @@
 }
 .ck-content .caption .media .field {
   line-height: 1;
+}
+.ck-content {
+  /* Override clf's default blockquote and pre styles when captioned. */
 }
 .ck-content .caption-pre > pre,
 .ck-content .caption-blockquote > blockquote {
@@ -781,10 +793,12 @@
 .ck-content .media--type-logo {
   display: inline-block;
   vertical-align: middle;
-  padding-left: 2rem;
 }
 .ck-content .media--type-logo div {
   line-height: 0;
+}
+.ck-content .media--type-logo {
+  padding-left: 2rem;
 }
 .ck-content .media--type-logo img {
   object-fit: contain;
@@ -822,7 +836,7 @@
   color: #005554;
 }
 .ck-content .text-large {
-  font-size: 2.2rem;
+  font-size: 3.4rem;
 }
 .ck-content .intro {
   color: #cc6e20;

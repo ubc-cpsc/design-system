@@ -1,10 +1,10 @@
+@use "sass:map";
 @charset "UTF-8";
 
-@import '../variables';
-@import '../bootstrap-no-output';
+@import "../bootstrap-no-output";
 
 .home__slider {
-  max-width: map_get($container-max-widths, xl);
+  max-width: map.get($container-max-widths, xl);
   width: 100%;
   margin: 0 auto;
 }

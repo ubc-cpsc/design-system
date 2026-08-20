@@ -212,7 +212,7 @@ label[for] {
 }
 
 fieldset {
-  background-color: #f6fffe;
+  background-color: rgb(96.6274509804%, 100%, 99.7880112045%);
   border: 2px solid #00afa4;
   border-radius: 3px;
   padding: 1em;
@@ -505,7 +505,7 @@ td :last-child {
 
 @media (min-width: 980px) {
   .landing-banner__image {
-    background-color: #4b1f12;
+    background-color: rgb(29.5505279035%, 12.3438914027%, 6.9200603318%);
   }
   .field--name-field-landing-banner-image {
     outline: 1rem #fff solid;
@@ -521,7 +521,7 @@ td :last-child {
     position: absolute;
     left: 0;
     bottom: 0;
-    background: rgba(34, 14, 8, 0.6);
+    background: rgba(13.3453996983%, 5.5746606335%, 3.125188537%, 0.6);
     padding: 2rem;
   }
 }
@@ -760,7 +760,7 @@ td :last-child {
 .button.form-submit.button--hover, .button.form-submit:hover,
 .button--hover.button--primary,
 .button--primary:hover {
-  background-color: #007c74;
+  background-color: rgb(0%, 48.6274509804%, 45.5708683473%);
   color: #fff;
   box-shadow: 0 1px 2px hsla(203, 10%, 10%, 0.25);
 }
@@ -782,11 +782,11 @@ td :last-child {
   color: #fff;
 }
 .button--hover.button--secondary, .button--secondary:hover {
-  background-color: #007c74;
+  background-color: rgb(0%, 48.6274509804%, 45.5708683473%);
   box-shadow: 0 1px 2px hsla(203, 10%, 10%, 0.25);
 }
 .button--active.button--secondary, .button--secondary:active {
-  background-color: #003c3b;
+  background-color: rgb(0%, 23.3333333333%, 23.0588235294%);
   box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.2);
 }
 
@@ -869,8 +869,8 @@ td :last-child {
 .button--hover.read-more__link, .read-more__link:hover,
 .button--outline.button--hover,
 .button--outline:hover {
-  box-shadow: inset 0 0 0 2px #007c74;
-  color: #007c74;
+  box-shadow: inset 0 0 0 2px rgb(0%, 48.6274509804%, 45.5708683473%);
+  color: rgb(0%, 48.6274509804%, 45.5708683473%);
 }
 .button--active.read-more__link, .read-more__link:active,
 .button--outline.button--active,
@@ -1749,7 +1749,7 @@ div.filter-options select {
 
 .home-banner__title {
   width: 100%;
-  background: #220e08;
+  background: rgb(13.3453996983%, 5.5746606335%, 3.125188537%);
   padding: 1.5rem 2rem;
 }
 @media (min-width: 576px) {
@@ -1757,7 +1757,7 @@ div.filter-options select {
     position: absolute;
     left: 0;
     bottom: 0;
-    background: rgba(34, 14, 8, 0.9);
+    background: rgba(13.3453996983%, 5.5746606335%, 3.125188537%, 0.9);
   }
 }
 @media (min-width: 768px) {
@@ -1825,7 +1825,7 @@ div.filter-options select {
   width: 120px;
 }
 .block-sponsor-logos--bronze {
-  border: 3px solid #bea278;
+  border: 3px solid rgb(74.3770017967%, 63.4403562222%, 47.1916256542%);
   column-gap: 20px;
   column-count: auto;
   column-width: 150px;
@@ -1939,10 +1939,12 @@ div.filter-options select {
 .media--type-logo {
   display: inline-block;
   vertical-align: middle;
-  padding-left: 2rem;
 }
 .media--type-logo div {
   line-height: 0;
+}
+.media--type-logo {
+  padding-left: 2rem;
 }
 .media--type-logo img {
   object-fit: contain;
@@ -3151,7 +3153,7 @@ img[data-lazy] {
 }
 
 .sub-menu .menu-item__label {
-  border-bottom: 1px solid #dff4f4;
+  border-bottom: 1px solid rgb(87.5%, 95.8333333333%, 95.7352941176%);
 }
 
 .sub-menu .menu-item--active-trail > .menu-item__label .menu-item__link {
